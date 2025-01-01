@@ -3,7 +3,7 @@
 import { useState } from "react";
 import axios from "axios";
 const App=()=>{
-  const {input,setInput}=useState({});
+  const [input,setInput]=useState({});
   const handleInput=(e)=>{
     const name=e.target.name;
     const value=e.target.value;
@@ -14,6 +14,7 @@ const App=()=>{
     let api="http://localhost:8000/students/datasave";
     axios.post(api,input).then((res)=>{
       console.log("Data Save!!")
+      setInput("");
     })
     .catch((error)=>{
       console.log("Error Saving Data", error)

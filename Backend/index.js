@@ -11,7 +11,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/merncrud").then((res)=>{
     console.log("DB Connected!!")
 })
 
-app.use(cors);
+app.use(cors());
 
 // Body-parser middleware
 app.use(bodyparser.urlencoded({ extended: true }))
