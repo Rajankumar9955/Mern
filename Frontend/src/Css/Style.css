@@ -7,3 +7,20 @@
 #container{
     width: 100%;
 }
+
+#main{
+    margin-bottom: -5px;
+}
+#marq {
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(198, 172, 141);
+
+}
+#geek1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(40, 51, 40);
+    padding-bottom: 5px;
+}

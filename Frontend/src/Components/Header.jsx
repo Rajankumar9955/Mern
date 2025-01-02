@@ -4,7 +4,14 @@
 const Header=()=>{
     return(
         <>
-           <h1 align="center">This is Emloyees Management System</h1>
+        <div id="main">
+           <marquee id="marq" 
+            direction="right" loop="" >
+            <div id="geek1">
+                <p style={{alignItems:"center",justifyContent:"center"}}>Employee Management System</p>
+                </div>
+        </marquee>
+        </div>
         </>
     )
 }
