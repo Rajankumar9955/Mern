@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 const Delete=()=>{
-    const [myData, setMydata]=useState([]);
+    const [mydata, setMydata]=useState([]);
     
     const loadData=()=>{
         let api="http://localhost:8000/students/datadelete";
@@ -13,7 +13,7 @@ const Delete=()=>{
     useEffect(()=>{
         loadData();
     },[])
-    const ans=myData.map((key)=>{
+    const ans=mydata.map((key)=>{
         return(
             <>
             <tr>

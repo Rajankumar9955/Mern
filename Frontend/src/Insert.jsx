@@ -34,9 +34,9 @@ const Insert=()=>{
         <FloatingLabel controlId="floatingInput" label="Name" className="mb-2">
         <Form.Control type="text"  name="name" value={input.name} onChange={handleInput}/></FloatingLabel>
         <FloatingLabel controlId="floatingInput" label="City" className="mb-2">
-        <Form.Control type="text"  value={input.city} onChange={handleInput}/></FloatingLabel>
+        <Form.Control type="text" name="city"  value={input.city} onChange={handleInput}/></FloatingLabel>
         <FloatingLabel controlId="floatingInput" label="Fees" className="mb-2">
-        <Form.Control type="email"   name="email" value={input.fees} onChange={handleInput}/></FloatingLabel>
+        <Form.Control type="text"   name="fees" value={input.fees} onChange={handleInput}/></FloatingLabel>
         <Button variant="success" onClick={handleSubmit}>Success</Button>
         </div>
       </div>
