@@ -13,6 +13,18 @@ const DataSave=async(req,res)=>{
     })
     res.send("OK!!!")
 }
+
+const DataDisplay=async(req,res)=>{
+    const mydata=await StuModel.find();
+    res.send(mydata);
+
+}
+const DataDelete=async(req,res)=>{
+    const data=await StuModel.findByIdAndDelete();
+    res.send(data);
+}
 module.exports={
-    DataSave
+    DataSave,
+    DataDisplay,
+    DataDelete
 }
