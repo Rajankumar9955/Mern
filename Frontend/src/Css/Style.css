@@ -3,6 +3,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    /* overflow-y: hidden; */
 }
 #container{
     width: 100%;
@@ -23,4 +24,68 @@
     font-weight: bold;
     color: rgb(40, 51, 40);
     padding-bottom: 5px;
+}
+#menu{
+    border: 2px solid black;
+    height: 400px;
+    margin-left: 2px;
+
+}
+#menuoulet{
+    border: 2px solid black;
+    height: 400px;
+}
+#view{
+    display:flex;
+    flex-direction: column;
+}
+#view2{
+    margin-top: 60px;
+    margin-bottom: 3px;
+    border: 2px solid black;
+    height: 40px;
+    width: 100px;
+    margin-left: 20%;
+    border-radius: 10px;
+}
+#view1{
+    border: 2px solid black;
+    height: 40px;
+    width: 100px;
+    margin-top: 5px;
+    margin-left: 20%;
+    border-radius: 10px;
+}
+#btn{
+    margin-left:20px;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+}
+#view2:hover{
+    background-color: antiquewhite;
+    color: black;
+}
+#view1:hover{
+    background-color: antiquewhite;
+    color: black;
+}
+#view3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:40px;
+    /* margin-left: -28px; */
+    margin-top: 30px;
+   
+}
+#btn2{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+#stgs{
+    margin-left: 55px;
+    width: 80px;
+    border: 2px solid black;
+    border-radius: 5px;
 }

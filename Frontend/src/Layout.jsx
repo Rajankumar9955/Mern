@@ -3,29 +3,54 @@
 import Header from "./Components/Header";
 import TopMenu from "./Components/TopMenu";
 import Footer from "./Components/Footer";
+import MenuBar from "./Components/Menubar";
 import { Outlet } from "react-router-dom";
 
-// import Container from 'react-bootstrap/Container';
+import Container from "react-bootstrap/esm/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+// import Container from "react-bootstrap/esm/Container";
+
+import ViewData from "./Components/ViewData";
 const Layout=()=>{
     return(
         <>
              <Header/>
-             <TopMenu/>
+             
 {/* <Container> */}
       <Row>
-        <Col style={{border:"2px solid black"}}>1 of 2</Col>
-      
-        <Col>
-            <div style={{border:"2px solid black"}}>
-                  <Outlet/>
-             </div>
+        <Col  md="1">
+        <div style={{height:"55px"}}>
+        <MenuBar />
+        </div>    
+        </Col> 
+        <Col >
+        <div style={{height:"0px"}}>
+             <TopMenu/>
+        </div>
         </Col>
       </Row>
-    {/* </Container> */}
-            
+      {/* </Container> */}
+
+      <div>
+     {/* <Container> */}
+              <Row>
+              <Col  md="2">
+              <div id="menu">
+                       <ViewData/>
+              </div>
+              </Col>
+              <Col  md="10">
+              <div id="menuoulet">
+              <Outlet/>
+              </div>
+              </Col>
+              </Row>
+      {/* </Container> */}
+      </div>
+
              <Footer/>
+
         </>
     )
 }
