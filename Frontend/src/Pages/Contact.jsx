@@ -8,7 +8,7 @@
 const Contact=()=>{
     return(
         <>
-        <h1>This is Contact Section</h1>
+        <h1 >This is Contact Section</h1>
         
         </>
     )
