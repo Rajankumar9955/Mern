@@ -28,8 +28,8 @@ const Update=()=>{
                 <td>{key.car_model}</td>
                 <td>{key.fuel_type}</td>
                 <td>{key.launch_date}</td>
-                <td>{key.car_mileage}</td>
-                <td>{key.car_price}</td>
+                <td>{key.car_mileage} km/L</td>
+                <td>₹ {key.car_price}</td>
                 <td>
                     <img src={edtimg} alt="" className="update" />
                 </td>
