@@ -3,6 +3,8 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 const Display=()=>{
+    
+    
     const [data,setData]=useState([]);
 
     const loadData=()=>{
@@ -18,6 +20,7 @@ const Display=()=>{
     let sno=0;
     const ans=data.map((key)=>{
         sno++;
+        
         return(
             <>
             <tr>

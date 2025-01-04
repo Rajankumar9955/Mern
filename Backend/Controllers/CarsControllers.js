@@ -24,14 +24,21 @@ const DataDelete=async(req,res)=>{
     const mydata=await CarsModule.findByIdAndDelete(id);
     res.send(mydata);
 }
-const editDataDisplay=async(req,res)=>{
+const EditDataDisplay=async(req,res)=>{
     const {id}=req.body;
-    const mydata=await CarsModule.findById(id);
-    res.send(mydata);
+    const data=await CarsModule.findById(id);
+    res.send(data);
+}
+const EditDataSave=async(req,res)=>{
+    const {id}=req.body;
+    const saveData=await CarsModule.findByIdAndUpdate(id)
+    res.send(saveData);
+    console.log(saveData);
 }
 module.exports={
     DataSave,
     DataDisplay,
     DataDelete,
-    editDataDisplay
+    EditDataDisplay,
+    EditDataSave
 }
