@@ -30,7 +30,6 @@ import { useParams } from "react-router-dom";
         let api="http://localhost:8000/cars/editdatasave";
         axios.post(api,input).then((res)=>{
             alert("Data Updated!!")
-            loadData();
         })
     }
     return(
