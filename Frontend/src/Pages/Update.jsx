@@ -17,6 +17,11 @@ const Update=()=>{
     useEffect(()=>{
         loadData();
     },[])
+    
+    const mydel=(id)=>{
+        let api="http://localhost"
+    }
+
     let sno=0;
     const ans=data.map((key)=>{
         sno++;
@@ -31,10 +36,14 @@ const Update=()=>{
                 <td>{key.car_mileage} km/L</td>
                 <td>₹ {key.car_price}</td>
                 <td>
-                    <img src={edtimg} alt="" className="update" />
+                    <a href="">
+                        <img src={edtimg} alt="" className="update" />
+                        </a>
                 </td>
                 <td>
-                     <img src={dltimg} alt="" className="update"/>
+                     <a href="#" onClick={()=>{mydel(key._id)}}>
+                        <img src={dltimg} alt="" className="update"/>
+                        </a>
                 </td>
             </tr>
             </>
