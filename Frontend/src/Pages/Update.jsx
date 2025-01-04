@@ -4,9 +4,10 @@ import axios from "axios";
 import Table from 'react-bootstrap/Table';
 import dltimg from "../Images/dltimg.png"
 import edtimg from "../Images/editimg.jpg"
+import {useNavigate} from "react-router-dom";
 const Update=()=>{
     const [data,setData]=useState([]);
-
+     const navigate=useNavigate();
     const loadData=()=>{
         let api="http://localhost:8000/cars/datadisplay";
         axios.get(api).then((res)=>{
@@ -19,7 +20,11 @@ const Update=()=>{
     },[])
     
     const mydel=(id)=>{
-        let api="http://localhost"
+        let api="http://localhost:8000/cars/datadelete"
+        axios.post(api,{id:id}).then((res)=>{
+            alert("Data Deleted!!")
+            loadData();
+        })
     }
 
     let sno=0;
@@ -36,7 +41,7 @@ const Update=()=>{
                 <td>{key.car_mileage} km/L</td>
                 <td>₹ {key.car_price}</td>
                 <td>
-                    <a href="">
+                    <a href="#" onClick={()=>{navigate(`/editdata/${key._id}`)}}>
                         <img src={edtimg} alt="" className="update" />
                         </a>
                 </td>
