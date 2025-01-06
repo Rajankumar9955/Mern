@@ -30,10 +30,17 @@ const EditDataDisplay=async(req,res)=>{
     res.send(data);
 }
 const EditDataSave=async(req,res)=>{
-    const {id}=req.body;
-    const saveData=await CarsModule.findByIdAndUpdate(id)
-    res.send(saveData);
-    console.log(saveData);
+    const {_id,car_name,car_model,fuel_type,launch_date,car_mileage,car_price}=req.body;
+    const mydata=await CarsModule.findByIdAndUpdate(_id,{
+        car_name:car_name,
+        car_model:car_model,
+        fuel_type:fuel_type,
+        launch_date:launch_date,
+        car_mileage:car_mileage,
+        car_price:car_price
+    })
+    console.log(mydata);
+    res.send("ok")
 }
 module.exports={
     DataSave,
