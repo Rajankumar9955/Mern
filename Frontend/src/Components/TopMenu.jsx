@@ -13,7 +13,7 @@ const TopMenu=()=>{
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             <div>
-            Signed in as: <a href="/lrpage">Rajan Kumar</a>
+            Signed in as: <a href="#">Rajan Kumar</a>
             </div>
           </Navbar.Text>
         </Navbar.Collapse>

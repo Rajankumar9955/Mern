@@ -6,9 +6,9 @@ require("dotenv").config();
 const bodyparser=require("body-parser");
 const CarRoute=require("./Routes/CarsRoutes")
 
-const BD=process.env.DBCONNECTION;
+const DataBase=process.env.DBCONNECTION;
 const port=process.env.PORT;
-mongoose.connect(BD).then((res)=>{
+mongoose.connect(DataBase).then((res)=>{
     console.log("Cars DataBase Connected!")
 })
 

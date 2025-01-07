@@ -55,7 +55,7 @@ const MenuBar=()=>{
                     aria-label="Search"
                     // value={searchData} onChange={(e)=>{setSearchData(e.target.value)}}
                   />
-                  {/* <Button variant="outline-success" onClick={handleSearch}>Search</Button> */}
+                  <Button variant="outline-success">Search</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
