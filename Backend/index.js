@@ -1,13 +1,14 @@
 const express=require("express");
 const app=express();
-const port=8000;
 const cors=require("cors");
 const mongoose=require("mongoose");
+require("dotenv").config();
 const bodyparser=require("body-parser");
 const CarRoute=require("./Routes/CarsRoutes")
-const UserRoute=require("./Routes/UsrRoutes")
 
-mongoose.connect("mongodb://127.0.0.1:27017/carmanagementsystem").then((res)=>{
+const BD=process.env.DBCONNECTION;
+const port=process.env.PORT;
+mongoose.connect(BD).then((res)=>{
     console.log("Cars DataBase Connected!")
 })
 
@@ -18,7 +19,6 @@ app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
 
 app.use("/cars", CarRoute);
-app.use("/users",UserRoute);
 
 app.listen(port,()=>{
     console.log(`Server Run on ${port} Port!`)
