@@ -1,5 +1,6 @@
 
 
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -8,9 +9,16 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const MenuBar=()=>{
+// const Mynav=useNavigate();
+//   const [searchData,setSearchData]=useState("")
+//   const handleSearch=()=>{
+//     Mynav(`search/${searchData}`)
+//   }
+
     return(
         <>
     <div>
@@ -25,7 +33,7 @@ const MenuBar=()=>{
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
+                 Welcome Boss
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
@@ -45,8 +53,9 @@ const MenuBar=()=>{
                     placeholder="Search"
                     className="me-2"
                     aria-label="Search"
+                    // value={searchData} onChange={(e)=>{setSearchData(e.target.value)}}
                   />
-                  <Button variant="outline-success">Search</Button>
+                  {/* <Button variant="outline-success" onClick={handleSearch}>Search</Button> */}
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

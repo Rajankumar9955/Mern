@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 
+import { Link, useNavigate } from 'react-router-dom';
 const TopMenu=()=>{
     return(
         <>
@@ -12,7 +12,9 @@ const TopMenu=()=>{
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Signed in as: <a href="#login">Rajan Kumar</a>
+            <div>
+            Signed in as: <a href="/lrpage">Rajan Kumar</a>
+            </div>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
