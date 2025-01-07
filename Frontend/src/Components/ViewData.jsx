@@ -17,6 +17,9 @@ const ViewData=()=>{
                                 <Link to="update" id="btn">Update</Link>
                             </div>
                             <div id="view1">
+                                <Link to="search" id="btn">Search</Link>
+                            </div>
+                            <div id="view1">
                                 <Link to="contact" id="btn">Contact</Link>
                             </div>
                   </div>

@@ -42,10 +42,16 @@ const EditDataSave=async(req,res)=>{
     console.log(mydata);
     res.send("ok")
 }
+const DataSearch=async(req,res)=>{
+    const {carName}=req.body;
+    const srchdata=await CarsModule.find({"car_name":{$regex:carName,$options:'i'}})
+    res.send(srchdata);
+}
 module.exports={
     DataSave,
     DataDisplay,
     DataDelete,
     EditDataDisplay,
-    EditDataSave
+    EditDataSave,
+    DataSearch
 }
