@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import axios from "axios";
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import {message} from "antd"
 const Registration=()=>{
     const [input,setInput]=useState({});
 
@@ -14,7 +15,7 @@ const Registration=()=>{
     const handleSubmit=()=>{
         let api="http://localhost:8000/users/registration";
         axios.post(api,input).then((res)=>{
-            alert("Data Inserted!!");
+            message.success("Data Inserted!!");
         })
     }
     return(

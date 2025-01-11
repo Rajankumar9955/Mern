@@ -6,6 +6,7 @@ import axios from "axios";
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+import { message } from 'antd';
 const Login=()=>{
     const navigate=useNavigate();
     const [email,setEmail]=useState("");
@@ -26,7 +27,7 @@ const Login=()=>{
         }
 
     } catch (error) {
-        alert(error.response.data.msg);
+        message.error(error.response.data.msg);
     }
 }
     return(
