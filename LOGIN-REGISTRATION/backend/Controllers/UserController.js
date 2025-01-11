@@ -28,7 +28,7 @@ const Login=async(req,res)=>{
     const checkpass=await bcrypt.compare(password,User.password);
     if(checkpass)
     {
-        res.status(200).send({msg:"Valid Password"});
+        res.status(200).send(User);
     }
     else
     {

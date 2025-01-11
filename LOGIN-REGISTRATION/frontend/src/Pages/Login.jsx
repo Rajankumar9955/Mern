@@ -18,7 +18,11 @@ const Login=()=>{
         const response=await axios.post(api,{email:email,password:password})
         if(response.status==200)
         {
-             navigate("/home");
+            localStorage.setItem("username",response.data.name);
+            localStorage.setItem("useremail",response.data.email);
+            console.log(response.data);
+
+             navigate("/dashboard");
         }
 
     } catch (error) {
