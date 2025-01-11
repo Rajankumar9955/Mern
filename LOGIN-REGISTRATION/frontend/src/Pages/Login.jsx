@@ -30,22 +30,25 @@ const Login=()=>{
     }
 }
     return(
-        <>
-           <div align="center">
-                 Log-In
-            <div style={{width:"400px"}}>
+     <>
 
-      <FloatingLabel controlId="floatingPassword" label="Email" className="mb-1">
-        <Form.Control type="email" placeholder="Password" name='email'  value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
-      </FloatingLabel>
+        <div align="center" >
+          <div style={{width:"400px",padding:"10px",marginTop:"80px",border:"2px solid black",borderRadius:"15px"}}>
+          <h4 style={{marginTop:"15px",marginBottom:"15px"}}>Login</h4>
+            <div style={{width:"85%"}}>
 
-      <FloatingLabel controlId="floatingPassword" label="Password" className="mb-1">
-        <Form.Control type="password" placeholder="Password" name='password'  value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
-      </FloatingLabel>
-      <Button variant="success" onClick={handleSubmit}>Success</Button>
+                <FloatingLabel controlId="floatingPassword" label="Email" className="mb-1">
+                  <Form.Control type="email" placeholder="Password" name='email'  value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+                </FloatingLabel>
+          
+                <FloatingLabel controlId="floatingPassword" label="Password" className="mb-1">
+                  <Form.Control type="password" placeholder="Password" name='password'  value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
+                </FloatingLabel>
+                <Button variant="success" onClick={handleSubmit}>Success</Button>
             </div>
-            </div> 
-        </>
+          </div> 
+        </div> 
+     </>
     )
 }
 export default Login;
