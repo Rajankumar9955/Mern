@@ -44,10 +44,11 @@ const Login=async(req,res)=>{
 
 const ResetPass=async(req,res)=>{
     const {userid,oldpassword,newpassword}=req.body;
+
     try {
-        const Data=await UserModel.findById(userid);
-    console.log(Data);
-    const chkpass= await bcrypt.compare(oldpassword, Data.password);
+          const Data=await UserModel.findById(userid);
+          console.log(Data);
+          const chkpass= await bcrypt.compare(oldpassword, Data.password);
     if(chkpass)
     {
              const salt = await bcrypt.genSalt();
@@ -59,7 +60,7 @@ const ResetPass=async(req,res)=>{
     {
         res.status(400).send({msg:"Old Password Doesn't Match!!!"});
     }
-    
+
     } catch (error) {
 
         console.log(error);
