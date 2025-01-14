@@ -1,6 +1,21 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 const ViewData=()=>{
+
+    const navigate=useNavigate();
+
+   
+
+   const logout=()=>{
+         localStorage.clear();
+         navigate("/home");
+   } 
+
+   const prevent=(e)=>{
+    e.preventDefault();
+    navigate("/login")
+   }
     return(
         <>
                   <div id="view">
@@ -25,8 +40,8 @@ const ViewData=()=>{
                   </div>
                 
                   <div id="view3">
-                    <div><a href="/login" id="btn2">Sign-in</a></div> |
-                    <div><a href="#" id="btn2">Sign-out</a></div>
+                    <div><a href="#" id="btn2" onClick={prevent}>Sign-in</a></div> |
+                    <div><a href="#" id="btn2" onClick={logout}>Sign-out</a></div>
                   </div>
                   <div>
                           <div id="stgs"><a href="/registration" style={{marginLeft:"10px",textDecoration:"none"}}>Register</a></div>
