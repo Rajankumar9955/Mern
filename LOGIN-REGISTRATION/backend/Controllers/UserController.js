@@ -41,33 +41,31 @@ const Login=async(req,res)=>{
   }
 
 }
-
-const ResetPass=async(req,res)=>{
+const ResetPassword=async(req,res)=>{
     const {userid,oldpassword,newpassword}=req.body;
-
     try {
-          const Data=await UserModel.findById(userid);
-          console.log(Data);
-          const chkpass= await bcrypt.compare(oldpassword, Data.password);
-    if(chkpass)
-    {
-             const salt = await bcrypt.genSalt();
-             const passwordHash = await bcrypt.hash(newpassword, salt);
-             await UserModel.findByIdAndUpdate(userid,{password:passwordHash});
-             res.status(200).send({msg:"Password Updated"});
-    }
-    else
-    {
-        res.status(400).send({msg:"Old Password Doesn't Match!!!"});
-    }
+        
+        const data=await UserModel.findById(userid);
+        console.log(data);
+        const checkpass=await bcrypt.compare(oldpassword,data.password);
+        if(checkpass)
+        {
+            const salt = await bcrypt.genSalt();
+            const passwordHash = await bcrypt.hash(newpassword, salt);
+            await UserModel.findByIdAndUpdate(userid,{password:passwordHash})
+            res.status(200).send({msg:"SuccessFully Change Password!!"})
+        }
+        else
+        {
+            res.status(400).send({msg:"Old Password doesn't match!!"});
+        }
 
     } catch (error) {
-
         console.log(error);
     }
 }
 module.exports={
     Registration,
     Login,
-    ResetPass
+    ResetPassword
 }

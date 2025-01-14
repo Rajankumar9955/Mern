@@ -5,29 +5,34 @@ import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 const ResetPassword=()=>{
   const navigate=useNavigate();
-         const [input,setInput]=useState({});
-         const [userid,setUserid]=useState("");
+        const [input,setInput]=useState({});
+        const [userid,setUserid]=useState("");
+
         useEffect(()=>{
-             setUserid(localStorage.getItem("userid"));
+              setUserid(localStorage.getItem("userid"))
         },[])
 
         const handleInput=(e)=>{
-          const {name,value}=e.target;
-          setInput(values=>({...values,[name]:value}));
-          console.log(input);
+              const name=e.target.name;
+              const value=e.target.value
+              setInput(values=>({...values, [name]:value}));
+              console.log(input);
         }
-        const handleSubmit=async()=>{
-          let api="http://localhost:8000/users/resetpass";
-          try {
-             const res=await axios.post(api, {userid:userid, ...input})
-             message.success("Password Succesfully Changed!!");
-             navigate("/home");
-          } catch (error) {
-            message.error(error.response.data.msg);
-          }
+        const handleSubmit= async()=>{
+            let api="http://localhost:8000/users/resetpassword";
+
+            try {
+                  const ans=await axios.post(api, {userid:userid, ...input});
+                  message.success("Password SuccessFully Change!!");
+                  navigate("/home");
+            } catch (error) {
+                message.error(error.response.data.msg)
+            }
         }
+        
     return(
         <>
            <div align="center" style={{border:"2px solid black",borderRadius:"15px"}} >
