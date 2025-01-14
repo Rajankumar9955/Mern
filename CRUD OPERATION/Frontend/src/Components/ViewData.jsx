@@ -29,7 +29,7 @@ const ViewData=()=>{
                     <div><a href="#" id="btn2">Sign-out</a></div>
                   </div>
                   <div>
-                          <div id="stgs"><a href="#" style={{marginLeft:"10px",textDecoration:"none"}}>Settings</a></div>
+                          <div id="stgs"><a href="/registration" style={{marginLeft:"10px",textDecoration:"none"}}>Register</a></div>
                   </div>
         </>
     )
