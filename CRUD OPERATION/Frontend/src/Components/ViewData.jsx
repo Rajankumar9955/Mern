@@ -25,7 +25,7 @@ const ViewData=()=>{
                   </div>
                 
                   <div id="view3">
-                    <div><a href="#" id="btn2">Sign-in</a></div> |
+                    <div><a href="/login" id="btn2">Sign-in</a></div> |
                     <div><a href="#" id="btn2">Sign-out</a></div>
                   </div>
                   <div>

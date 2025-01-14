@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import axios from "axios";
-import {mess}
+import {message} from "antd";
  const Registration=()=>{
     const [input,setInput]=useState({});
 
@@ -17,14 +17,14 @@ import {mess}
     const handleSubmit=()=>{
         let api="http://localhost:8000/users/registration";
         axios.post(api,input).then((res)=>{
-            Message.success("Your Registration has Done!!");
+            message.success("Your Registration has Done!!");
             console.log(input);
         })
     }
     return(
         <>
-        <div id='form1'>
-       <div align="center" id='forms'>
+        <div id='form2'>
+       <div align="center" id='forms1'>
        <FloatingLabel controlId="floatingInput" label="Name" className="mb-1">
         <Form.Control type="text" placeholder="name@example.com" name='name' value={input.name} onChange={handleInput}/>
       </FloatingLabel>
@@ -34,7 +34,7 @@ import {mess}
       <FloatingLabel controlId="floatingInput" label="Password" className="mb-1">
         <Form.Control type="Password" placeholder="name@example.com" name='password' value={input.password} onChange={handleInput} />
       </FloatingLabel>
-      <Button variant="success" onClick={handleSubmit}>Save</Button>
+      <Button variant="success" onClick={handleSubmit}>Regiter Now</Button>
        </div>
        </div> 
         </>

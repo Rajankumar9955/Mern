@@ -113,3 +113,20 @@
 .update{
     height:40px;
 }
+#form2{
+    
+    margin-top: 80px;
+    border: 2px solid black;
+    width: 450px;
+    margin-left: 15%;
+    padding: 10px;
+    /* margin-top: 10px; */
+    border-radius:10px ;
+    background-color: rgb(235, 247, 247);
+}
+#forms1{
+    width: 400px;
+    margin: auto;
+    margin-top: 10px;
+    /* background-color: red; */
+}
