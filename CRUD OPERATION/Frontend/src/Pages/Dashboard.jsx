@@ -30,8 +30,8 @@ const Dashboard=()=>{
     }
     return(
         <>
-        <h1 align="center">Dashboard</h1>
-        <Container style={{border:"2px solid black",marginTop:""}}>
+        <h1 align="center" style={{marginTop:"25px"}}>Dashboard</h1>
+        <Container style={{marginTop:"50px"}}>
         <Row>
         <Col>
         <div style={{}}>
