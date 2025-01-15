@@ -11,7 +11,8 @@ import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import axios from "axios";
 import {message} from "antd";
-import { useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+
  const Login=()=>{
     const navigate=useNavigate();
     const [email,setEmail]=useState("");
@@ -39,6 +40,8 @@ import { useNavigate } from 'react-router-dom';
 
     return(
         <>
+
+
         <div id='form2'>
        <div align="center" id='forms1'>
       <FloatingLabel controlId="floatingInput" label="Email" className="mb-1">

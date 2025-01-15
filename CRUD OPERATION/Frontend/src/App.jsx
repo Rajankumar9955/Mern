@@ -11,6 +11,7 @@ import EditData from "./Pages/EditData";
 import Registration from "./Pages/Registration";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
+import ResetPassword from "./Pages/ResetPassword";
 
 const App=()=>{
  return(
@@ -28,7 +29,9 @@ const App=()=>{
                          <Route path="editdata/:id" element={<EditData/>}/>
                          <Route path="registration" element={<Registration/>}/>
                          <Route path="login" element={<Login/>}/>
-                         <Route path="dashboard" element={<Dashboard/>}/>
+                         <Route path="dashboard" element={<Dashboard/>}>
+                            <Route path="resetpass" element={<ResetPassword/>}/>
+                         </Route>
                          </Route>
                    </Routes>
        </BrowserRouter>

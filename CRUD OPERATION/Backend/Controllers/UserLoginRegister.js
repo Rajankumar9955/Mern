@@ -41,7 +41,31 @@ const Login=async(req,res)=>{
         res.send("Error in Coding please Check CareFully!!");
     }
 }
+const ResetPassword=async(req,res)=>{
+    const {userid,oldpassword,newpassword}=req.body;
+    try {
+        
+        const data=await UserModels.findById(userid);
+        console.log(data);
+        const checkpass=await bcrypt.compare(oldpassword,data.password);
+        if(checkpass)
+        {
+            const salt = await bcrypt.genSalt();
+            const passwordHash = await bcrypt.hash(newpassword, salt);
+            await UserModels.findByIdAndUpdate(userid,{password:passwordHash})
+            res.status(200).send({msg:"SuccessFully Change Password!!"})
+        }
+        else
+        {
+            res.status(400).send({msg:"Old Password doesn't match!!"});
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+}
 module.exports={
     Registration,
-    Login
+    Login,
+    ResetPassword
 }
