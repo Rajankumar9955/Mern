@@ -23,7 +23,7 @@ const Dashboard=()=>{
     return(
         <>
         
-        <h1>Dashboard</h1>
+        <h1 align="center">Dashboard</h1>
         <h1>{username}</h1>
         <h1>{useremail}</h1>
         

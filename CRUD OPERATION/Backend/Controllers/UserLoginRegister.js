@@ -22,11 +22,13 @@ const Login=async(req,res)=>{
     const{email,password}=req.body;
     try {
         const User=await UserModels.findOne({email:email})
+        // console.log(User)
         if(!User)
         {
              res.status(400).send({msg:"Invalid Email"});
         }
-        const checkpass=await bcrypt.compare(password,User.password);
+        const checkpass= await bcrypt.compare(password, User.password);
+        // console.log(checkpass);
         if(checkpass)
         {
             res.status(200).send(User);

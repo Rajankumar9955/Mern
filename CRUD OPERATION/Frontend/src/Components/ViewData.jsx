@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import {message} from "antd"
 const ViewData=()=>{
 
     const navigate=useNavigate();
@@ -9,6 +10,7 @@ const ViewData=()=>{
 
    const logout=()=>{
          localStorage.clear();
+         message.error("You are Log-out");
          navigate("/home");
    } 
 
