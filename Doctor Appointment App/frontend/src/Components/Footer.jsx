@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   MDBFooter,
@@ -10,17 +11,17 @@ import {
 } from 'mdb-react-ui-kit';
 
 const Footer=()=>{
-  return (
-    <>
-    <div style={{marginTop:"30px"}}>
-       <MDBFooter className='text-center' color='white' bgColor='dark'>
+    return(
+        <>
+        
+        <MDBFooter className='text-center' color='white' bgColor='dark'>
       <MDBContainer className='p-4'>
         <section className='mb-4'>
-          <MDBBtn outline color="light" floating className='m-1' href='https://www.facebook.com/profile.php?id=100037204516179' role='button'>
+          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
             <MDBIcon fab icon='facebook-f' />
           </MDBBtn>
 
-          <MDBBtn outline color="light" floating className='m-1' href='https://x.com/Raj_Malhotra4u' role='button'>
+          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
             <MDBIcon fab icon='twitter' />
           </MDBBtn>
 
@@ -28,15 +29,15 @@ const Footer=()=>{
             <MDBIcon fab icon='google' />
           </MDBBtn>
 
-          <MDBBtn outline color="light" floating className='m-1' href='https://www.instagram.com/mr_malhotraaa/' role='button'>
+          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
             <MDBIcon fab icon='instagram' />
           </MDBBtn>
 
-          <MDBBtn outline color="light" floating className='m-1' href='https://www.linkedin.com/in/rajan-kumar-741aa722a/' role='button'>
+          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
             <MDBIcon fab icon='linkedin-in' />
           </MDBBtn>
 
-          <MDBBtn outline color="light" floating className='m-1' href='https://github.com/rajankumar9955' role='button'>
+          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
             <MDBIcon fab icon='github' />
           </MDBBtn>
         </section>
@@ -55,8 +56,8 @@ const Footer=()=>{
               </MDBCol>
 
               <MDBCol size="auto">
-                <MDBBtn outline color='light' type='submit' className='mb-4'   >
-                 SEND
+                <MDBBtn outline color='light' type='submit' className='mb-4'>
+                  Subscribe
                 </MDBBtn>
               </MDBCol>
             </MDBRow>
@@ -185,14 +186,14 @@ const Footer=()=>{
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2024 Copyright By:
-        <a className='text-white' href='https://github.com/rajankumar9955'>
-          CCTVBAZAR.COM
+        © 2020 Copyright:
+        <a className='text-white' href='https://mdbootstrap.com/'>
+          MDBootstrap.com
         </a>
       </div>
     </MDBFooter>
-       </div>
-    </>
-  )
+        
+        </>
+    )
 }
-export default Footer;
+export default Footer
