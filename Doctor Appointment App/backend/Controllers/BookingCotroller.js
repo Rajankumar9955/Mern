@@ -16,7 +16,13 @@ const DataDisplay=async(req,res)=>{
      const data=await BookingModels.find();
      res.send(data);
 }
+const DataDelete=async(req,res)=>{
+    const {id}=req.body;
+    const mydata=await BookingModels.findByIdAndDelete(id);
+    res.send(mydata);
+}
 module.exports={
     DataSave,
-    DataDisplay
+    DataDisplay,
+    DataDelete
 }

@@ -16,7 +16,7 @@ const Book=()=>{
 
     
    const loadData=()=>{
-    let api="http://localhost:8000/doctors/editdata";
+    let api="http://localhost:8000/doctors/editdatadisplay";
     axios.post(api,{id:id}).then((res)=>{
         setInput(res.data);
     })
@@ -36,7 +36,7 @@ const Book=()=>{
         let api="http://localhost:8000/bookings/datasave";
         axios.post(api,input).then((res)=>{
             console.log(input);
-            message.success("Doctor Data Added!!")
+            message.success("Booking SucessFully!!")
         })
     }
 
@@ -59,7 +59,7 @@ const Book=()=>{
       <FloatingLabel controlId="floatingInput" label="Fees" className="mb-1">
         <Form.Control type="text" placeholder="name@example.com" name='fees'  value={input.fees} onChange={handleInput} />
       </FloatingLabel>
-      <Button variant="success" onClick={handleSubmit}>ADD</Button>
+      <Button variant="success" onClick={handleSubmit}>Book Now</Button>
         </div>
       </div>
         </>

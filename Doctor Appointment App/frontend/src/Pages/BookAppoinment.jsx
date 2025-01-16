@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 
 import Table from 'react-bootstrap/Table';
 import { useNavigate } from "react-router-dom";
-
+import Button from 'react-bootstrap/Button';
 const  BookAppoinment=()=>{
     const navigate=useNavigate();
     const [data,setData]=useState([]);
@@ -29,9 +29,9 @@ const  BookAppoinment=()=>{
                 <td>{key.department}</td>
                 <td>{key.age}</td>
                 <td>{key.shifttime}</td>
-                <td>{key.fees}</td>
+                <td>₹ {key.fees}</td>
                 <td>
-                <a href="#" onClick={()=>{navigate(`/book/${key._id}`)}}>Book Now</a>
+                <Button variant="success" ><a href="#" onClick={()=>{navigate(`/book/${key._id}`)}} style={{color:"white"}}>Book Now</a></Button>
                 </td>
             </tr>
             </>

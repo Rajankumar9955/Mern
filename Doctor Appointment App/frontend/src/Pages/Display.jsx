@@ -1,9 +1,10 @@
 
+import { message } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react"
 
 import Table from 'react-bootstrap/Table';
-
+import Button from 'react-bootstrap/Button';
 const  Display=()=>{
     const [data,setData]=useState([]);
 
@@ -16,6 +17,15 @@ const  Display=()=>{
     useEffect(()=>{
         loadData();
     },[])
+
+    const mydel=(id)=>{
+        let api="http://localhost:8000/bookings/datadelete";
+         axios.post(api,{id:id}).then((res)=>{
+            message.error("Data Deleted!!");
+            loadData();
+         })
+      }
+
     let sno=0;
     const ans=data.map((key)=>{
         sno++;
@@ -27,7 +37,12 @@ const  Display=()=>{
                 <td>{key.department}</td>
                 <td>{key.age}</td>
                 <td>{key.shifttime}</td>
-                <td>{key.fees}</td>
+                <td>₹ {key.fees}</td>
+                <td>
+                    <a href="#" onClick={()=>{mydel(key._id)}}>
+                    <Button variant="danger">Delete</Button>
+                    </a>
+                </td>
             </tr>
             </>
         )
@@ -47,6 +62,7 @@ const  Display=()=>{
           <th>Age</th>
           <th>Shift Timing</th>
           <th>Fees</th>
+          <th>Delete</th>
         </tr>
         {ans}
       </thead>
