@@ -1,17 +1,30 @@
 
 
 
+
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from "axios";
 import {message} from "antd"
+import { useParams } from 'react-router-dom';
 
-const AddDoctor=()=>{
+const Book=()=>{
+    const {id}=useParams()
     const [input,setInput]=useState({})
 
     
+   const loadData=()=>{
+    let api="http://localhost:8000/doctors/editdata";
+    axios.post(api,{id:id}).then((res)=>{
+        setInput(res.data);
+    })
+   }
+     useEffect(()=>{
+        loadData();
+     },[])
+
     const handleInput=(e)=>{
         const name=e.target.name;
         const value=e.target.value;
@@ -20,7 +33,7 @@ const AddDoctor=()=>{
     }
 
     const handleSubmit=()=>{
-        let api="http://localhost:8000/doctors/datasave";
+        let api="http://localhost:8000/bookings/datasave";
         axios.post(api,input).then((res)=>{
             console.log(input);
             message.success("Doctor Data Added!!")
@@ -52,4 +65,4 @@ const AddDoctor=()=>{
         </>
     )
 }
-export default AddDoctor;
+export default Book;

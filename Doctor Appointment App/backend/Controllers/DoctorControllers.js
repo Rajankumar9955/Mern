@@ -18,8 +18,13 @@ const DataDisplay=async(req,res)=>{
     const data=await DoctorModels.find();
     res.send(data);
 }
-
+const EditDataDisplay=async(req,res)=>{
+    const {id}=req.body;
+    const data=await DoctorModels.findById(id)
+    res.send(data);
+}
 module.exports={
     DataSave,
-    DataDisplay
+    DataDisplay,
+    EditDataDisplay
 }

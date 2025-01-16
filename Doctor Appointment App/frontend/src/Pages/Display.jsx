@@ -3,10 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 
 import Table from 'react-bootstrap/Table';
-import { useNavigate } from "react-router-dom";
 
-const  BookAppoinment=()=>{
-    const navigate=useNavigate();
+const  Display=()=>{
     const [data,setData]=useState([]);
 
     const loadData=async()=>{
@@ -30,9 +28,6 @@ const  BookAppoinment=()=>{
                 <td>{key.age}</td>
                 <td>{key.shifttime}</td>
                 <td>{key.fees}</td>
-                <td>
-                <a href="#" onClick={()=>{navigate(`/book/${key._id}`)}}>Book Now</a>
-                </td>
             </tr>
             </>
         )
@@ -42,7 +37,7 @@ const  BookAppoinment=()=>{
         
         <div style={{height:"510px"}}>
             <div>
-                <h1 align="center" style={{marginTop:"10px"}}>Available Doctors</h1>
+                <h1 align="center" style={{marginTop:"10px"}}>Your Booking</h1>
             <Table striped bordered hover>
       <thead>
         <tr>
@@ -63,4 +58,4 @@ const  BookAppoinment=()=>{
         </>
     )
 }
-export default BookAppoinment
+export default Display;

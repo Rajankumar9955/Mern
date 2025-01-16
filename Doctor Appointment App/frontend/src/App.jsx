@@ -3,9 +3,10 @@ import { BrowserRouter,Routes,Route } from "react-router-dom"
 import Layout from "./Layout"
 import Home from "./Pages/Home"
 import BookAppoinment from "./Pages/BookAppoinment"
-import AppoinmentData from "./Pages/AppoinmentData"
+import Display from "./Pages/Display"
 import Contact from "./Pages/Contact"
 import AddDoctor from "./Pages/AddDoctor"
+import Book from "./Pages/Book"
 
 const App=()=>{
   return(
@@ -16,9 +17,10 @@ const App=()=>{
                                  <Route index element={<Home/>}/>
                                  <Route path="home" element={<Home/>}/>
                                  <Route path="bookappoinment" element={<BookAppoinment/>}/>
-                                 <Route path="display" element={<AppoinmentData/>}/>
+                                 <Route path="display" element={<Display/>}/>
                                  <Route path="contact" element={<Contact/>}/>
                                  <Route path="adddoctor" element={<AddDoctor/>}/>
+                                 <Route path="book/:id" element={<Book/>}/>
                              </Route>
                       </Routes>
        </BrowserRouter>
