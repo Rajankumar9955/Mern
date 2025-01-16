@@ -12,6 +12,8 @@ const DataSave=async(req,res)=>{
     })
     res.send(data);
 }
+
 module.exports={
-    DataSave
+    DataSave,
+    DataDisplay
 }
