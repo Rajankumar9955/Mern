@@ -10,11 +10,12 @@ const TopMenu=()=>{
         <div>
         <Navbar bg="light" data-bs-theme="light">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand as={Link} to="home">Doctor Appoinment Booking System</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={Link} to="home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link as={Link} to="bookappoinment">Appoinment</Nav.Link>
+            <Nav.Link as={Link} to="display">Your_Booking</Nav.Link>
+            <Nav.Link as={Link} to="contact">Contact</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
