@@ -6,6 +6,7 @@ const DoctorSchema=new mongoose.Schema({
     doctorname:String,
     department:String,
     age:Number,
-    shifttime:String
+    shifttime:String,
+    fees:Number
 })
 module.exports=mongoose.model("doctor", DoctorSchema)

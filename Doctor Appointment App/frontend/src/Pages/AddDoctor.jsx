@@ -42,6 +42,9 @@ const AddDoctor=()=>{
       <FloatingLabel controlId="floatingInput" label="Shift Time" className="mb-1">
         <Form.Control type="text" placeholder="name@example.com" name='shifttime'  value={input.shifttime} onChange={handleInput} />
       </FloatingLabel>
+      <FloatingLabel controlId="floatingInput" label="Fees" className="mb-1">
+        <Form.Control type="text" placeholder="name@example.com" name='fees'  value={input.fees} onChange={handleInput} />
+      </FloatingLabel>
       <Button variant="success" onClick={handleSubmit}>ADD</Button>
         </div>
       </div>
