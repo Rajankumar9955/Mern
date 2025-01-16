@@ -12,7 +12,10 @@ const DataSave=async(req,res)=>{
     })
     res.send(data);
 }
-
+const DataDisplay=async(req,res)=>{
+     const data=await BookingModels.find();
+     res.send(data);
+}
 module.exports={
     DataSave,
     DataDisplay
