@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-
+import Table from 'react-bootstrap/Table';
 const Display=()=>{
     const [mydata,setMydata]=useState([]);
 
@@ -10,9 +10,44 @@ const Display=()=>{
         console.log(response.data);
         setMydata(response.data);
     }
+    useEffect(()=>{
+        loadData();
+    },[])
+    const ans=mydata.map((key)=>{
+        return(
+            <>
+            <tr>
+                <td>{key.authorname}</td>
+                <td>
+                    {key.books.map((key1)=>{
+                        return(
+                            <>
+                            <p>{key1.booktitle} price: {key1.bookprice}</p>
+                            </>
+                     )
+                    })
+                    }
+                </td>
+               
+            </tr>
+            
+            </>
+        )
+    })
     return(
         <>
-        <h1>Display Section!!</h1>
+        <div>
+        <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Author Name</th>
+          <th>Book Details</th>
+          <th></th>
+        </tr>
+        {ans}
+      </thead>
+      </Table>
+        </div>
         </>
     )
 }
