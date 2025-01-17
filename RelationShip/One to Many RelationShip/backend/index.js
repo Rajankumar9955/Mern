@@ -7,17 +7,17 @@ const mongoose=require("mongoose");
 const bodyparser = require('body-parser');
 const userRoute= require("./Routes/userRoutes");
 
-mongoose.connect("mongodb://127.0.0.1:27017//relationoneTomany").then(()=>{
+mongoose.connect("mongodb://127.0.0.1:27017/relationoneTomany").then(()=>{
     console.log("DB connected!");
 })
+
+
 app.use(cors());
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
 
 
 app.use("/user", userRoute);
-
-
 
 app.listen(8000, ()=>{
     console.log("Server run on 8000 port!");

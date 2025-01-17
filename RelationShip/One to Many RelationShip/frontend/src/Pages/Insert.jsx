@@ -28,7 +28,7 @@ const Insert=()=>{
       <div style={{ marginTop:"80px"}} align="center">
              <div style={{width:"400px", border:"2px solid black",borderRadius:"15px"}}>
                 <div style={{width:"380px",padding:"20px"}}>
-                <FloatingLabel controlId="floatingInput" label="Enter AuthorName" className="mb-1">
+                <FloatingLabel controlId="floatingInput" label="Enter Author Name" className="mb-1">
                 <Form.Control type="text" placeholder="name@example.com" name='authorname' value={input.authorname} onChange={handleInput} />
                 </FloatingLabel>
 
@@ -36,7 +36,7 @@ const Insert=()=>{
                 <Form.Control type="text" placeholder="Password" name='booktitle' value={input.booktitle} onChange={handleInput}/>
                 </FloatingLabel>
 
-                <FloatingLabel controlId="floatingPassword" label="First Name" className="mb-1">
+                <FloatingLabel controlId="floatingPassword" label="Book Price Name" className="mb-1">
                 <Form.Control type="text" placeholder="Password"  name='bookprice' value={input.bookprice} onChange={handleInput}/>
                 </FloatingLabel>
                     
