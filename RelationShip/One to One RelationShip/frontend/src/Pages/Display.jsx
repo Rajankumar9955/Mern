@@ -12,9 +12,10 @@ const Display=()=>{
     useEffect(()=>{
         loadData();
     },[])
-
-    const sno=0;
+     
+    let sno=0;
     const ans=data.map((key)=>{
+        sno++;
         return(
             <>
             <tr>

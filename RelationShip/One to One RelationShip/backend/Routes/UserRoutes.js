@@ -6,7 +6,7 @@ const UserControllers=require("../Controllers/UserControllers")
 
 
 route.post("/usersave", UserControllers.DataSave);
-route.post("/userdisplay", UserControllers.DataDisplay);
+route.get("/userdisplay", UserControllers.DataDisplay);
 
 
 module.exports = route;

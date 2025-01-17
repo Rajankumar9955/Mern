@@ -17,7 +17,11 @@ const DataSave=async(req,res)=>{
       res.status(200).send("Users Created!!");
 
 }
-const 
+const DataDisplay=async(req,res)=>{
+
+    const data= await ProfileModels.find().populate("userid");
+    res.send(data); 
+}
 module.exports={
     DataSave,
     DataDisplay
