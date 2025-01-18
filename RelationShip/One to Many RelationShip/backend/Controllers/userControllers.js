@@ -28,8 +28,14 @@ const UserDisplay=async(req,res)=>{
 }
 
 const AddMoreBook=async(req,res)=>{
-    console.log(req.body);
-    res.send("ok")
+   const {id,booktitle,bookprice}=req.body;
+   const Book=await BookModel.create({
+       booktitle:booktitle,
+       bookprice:bookprice,
+       authorid:id
+   })
+   await AuthorModel.findByIdAndUpdate(id,{ $push: {books:Book._id}})
+   res.send("ok")
 }
 module.exports={
     DataSave,
