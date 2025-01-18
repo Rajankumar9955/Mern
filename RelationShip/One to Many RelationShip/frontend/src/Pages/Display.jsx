@@ -1,8 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import Table from 'react-bootstrap/Table';
+import { useNavigate } from "react-router-dom";
 const Display=()=>{
     const [mydata,setMydata]=useState([]);
+
+    const navigate=useNavigate();
 
     const loadData=async()=>{
         let api="http://localhost:8000/user/userdisplay";
@@ -13,6 +16,10 @@ const Display=()=>{
     useEffect(()=>{
         loadData();
     },[])
+
+    const AddBook=(aid)=>{
+           navigate(`/addmorebook/${aid}`)
+    }
     const ans=mydata.map((key)=>{
         return(
             <>
@@ -28,7 +35,10 @@ const Display=()=>{
                     })
                     }
                 </td>
-               
+
+                <td>
+                    <button onClick={()=>{AddBook(key._id)}}>Add more Book</button>
+               </td>
             </tr>
             
             </>

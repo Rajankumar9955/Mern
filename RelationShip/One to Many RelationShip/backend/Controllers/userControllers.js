@@ -27,8 +27,12 @@ const UserDisplay=async(req,res)=>{
     res.send(Data);
 }
 
-
+const AddMoreBook=async(req,res)=>{
+    console.log(req.body);
+    res.send("ok")
+}
 module.exports={
     DataSave,
     UserDisplay,
+    AddMoreBook
 }
