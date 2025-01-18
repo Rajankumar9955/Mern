@@ -22,7 +22,6 @@ const Insert=()=>{
            setUploadImage(e.target.files[0]);
         }
 
-
      const handleSubmit=async()=>{
           
         const formData= new FormData();
@@ -32,7 +31,6 @@ const Insert=()=>{
 
         const response = await axios.post('https://api.cloudinary.com/v1_1/dvaamwh6h/image/upload', formData); 
         console.log(response.data.url); 
-
 
         let api="http://localhost:8000/user/datasave";
         const resp1=await axios.post(api,{imgname:response.data.url, ...input})
