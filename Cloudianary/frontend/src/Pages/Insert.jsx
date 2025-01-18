@@ -27,8 +27,8 @@ const Insert=()=>{
           
         const formData= new FormData();
         formData.append("file", uploadImage);  
-        formData.append("upload_preset", "MyPhotos"); //upload Reset 
-        formData.append("cloud_name",'dvaamwh6h'); //cload name  dvaamwh6h
+        formData.append("upload_preset", "MyPhotos"); //upload preset: MyPhotos
+        formData.append("cloud_name",'dvaamwh6h'); //cload name: dvaamwh6h
 
         const response = await axios.post('https://api.cloudinary.com/v1_1/dvaamwh6h/image/upload', formData); 
         console.log(response.data.url); 

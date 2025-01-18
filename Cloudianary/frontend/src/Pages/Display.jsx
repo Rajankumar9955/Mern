@@ -20,7 +20,7 @@ const Display=()=>{
             <>
             <tr>
                 <td>{sno}</td>
-                <td>{key.imgname}</td>
+                <td> <img src={key.imgname} style={{height:"100px", width:"100px"}} /></td>
                 <td>{key.rollno}</td>
                 <td>{key.name}</td>
                 <td>{key.city}</td>
