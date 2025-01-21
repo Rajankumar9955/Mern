@@ -7,6 +7,8 @@ import Display from "./Pages/Display"
 import Contact from "./Pages/Contact"
 import AddDoctor from "./Pages/AddDoctor"
 import Book from "./Pages/Book"
+import Registration from "./Pages/Registration"
+import Login from "./Pages/Login"
 
 const App=()=>{
   return(
@@ -21,8 +23,8 @@ const App=()=>{
                                  <Route path="contact" element={<Contact/>}/>
                                  <Route path="adddoctor" element={<AddDoctor/>}/>
                                  <Route path="book/:id" element={<Book/>}/>
-                                 <Route path="registration" element={<Book/>}/>
-                                 <Route path="login" element={<Book/>}/>
+                                 <Route path="registeration" element={<Registration/>}/>
+                                 <Route path="login" element={<Login/>}/>
                              </Route>
                       </Routes>
        </BrowserRouter>

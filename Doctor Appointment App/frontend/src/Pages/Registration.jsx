@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -27,7 +21,7 @@ const Registration=()=>{
         let api="http://localhost:8000/doctors/registration";
         axios.post(api,input).then((res)=>{
             console.log(input);
-            message.success("Doctor Data Added!!")
+            message.success("Your Registration Has Been Done!!")
         })
     }
 
@@ -35,22 +29,16 @@ const Registration=()=>{
         <>
       <div align="center"style={{marginTop:"100px",height:"410px"}}>
         <div style={{width:"400px"}}>
-        <FloatingLabel controlId="floatingInput" label="Doctor Name" className="mb-1">
-        <Form.Control type="text" placeholder="name@example.com" name='doctorname' value={input.doctorname}  onChange={handleInput} />
+        <FloatingLabel controlId="floatingInput" label="Name" className="mb-1">
+        <Form.Control type="text" placeholder="name@example.com" name='name' value={input.name}  onChange={handleInput} />
       </FloatingLabel>
       <FloatingLabel controlId="floatingInput" label="Department" className="mb-1">
-        <Form.Control type="text" placeholder="name@example.com" name='department'  value={input.department} onChange={handleInput} />
+        <Form.Control type="email" placeholder="name@example.com" name='email'  value={input.email} onChange={handleInput} />
       </FloatingLabel>
       <FloatingLabel controlId="floatingInput" label="Age" className="mb-1">
-        <Form.Control type="text" placeholder="name@example.com"  name='age' value={input.age}  onChange={handleInput} />
+        <Form.Control type="password" placeholder="name@example.com"  name='password' value={input.password}  onChange={handleInput} />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingInput" label="Shift Time" className="mb-1">
-        <Form.Control type="text" placeholder="name@example.com" name='shifttime'  value={input.shifttime} onChange={handleInput} />
-      </FloatingLabel>
-      <FloatingLabel controlId="floatingInput" label="Fees" className="mb-1">
-        <Form.Control type="text" placeholder="name@example.com" name='fees'  value={input.fees} onChange={handleInput} />
-      </FloatingLabel>
-      <Button variant="success" onClick={handleSubmit}>ADD</Button>
+      <Button variant="success" onClick={handleSubmit}>Register Here!!</Button>
         </div>
       </div>
         </>
