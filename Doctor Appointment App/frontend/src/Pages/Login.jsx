@@ -29,16 +29,13 @@ const Login=()=>{
         <>
       <div align="center"style={{marginTop:"100px",height:"410px"}}>
         <div style={{width:"400px"}}>
-        <FloatingLabel controlId="floatingInput" label="Name" className="mb-1">
-        <Form.Control type="text" placeholder="name@example.com" name='name' value={input.name}  onChange={handleInput} />
-      </FloatingLabel>
-      <FloatingLabel controlId="floatingInput" label="Department" className="mb-1">
+      <FloatingLabel controlId="floatingInput" label="Email" className="mb-1">
         <Form.Control type="email" placeholder="name@example.com" name='email'  value={input.email} onChange={handleInput} />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingInput" label="Age" className="mb-1">
+      <FloatingLabel controlId="floatingInput" label="Password" className="mb-1">
         <Form.Control type="password" placeholder="name@example.com"  name='password' value={input.password}  onChange={handleInput} />
       </FloatingLabel>
-      <Button variant="success" onClick={handleSubmit}>Register Here!!</Button>
+      <Button variant="success" onClick={handleSubmit}>Login</Button>
         </div>
       </div>
         </>
