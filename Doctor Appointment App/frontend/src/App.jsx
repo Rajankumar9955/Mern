@@ -21,6 +21,8 @@ const App=()=>{
                                  <Route path="contact" element={<Contact/>}/>
                                  <Route path="adddoctor" element={<AddDoctor/>}/>
                                  <Route path="book/:id" element={<Book/>}/>
+                                 <Route path="registration" element={<Book/>}/>
+                                 <Route path="login" element={<Book/>}/>
                              </Route>
                       </Routes>
        </BrowserRouter>

@@ -14,7 +14,7 @@ const Menu=()=>{
                 <button style={{marginTop:"10px",width:"120px",height:"60px",borderRadius:"15px"}} id="btn"><Link to="display">Display</Link></button>
                 <button style={{marginTop:"10px",width:"120px",height:"60px",borderRadius:"15px"}} id="btn"><Link to="contact">Contact</Link></button>
                 <div style={{marginTop:"100px",width:"180px",height:"40px",marginLeft:"14px"}} >          
-                    <button id="btn1"><Link to="adddoctor">Add Doctor</Link></button>
+                    <button id="btn1"><Link to="adddoctor"></Link></button>
                 </div>
             </div>
            
