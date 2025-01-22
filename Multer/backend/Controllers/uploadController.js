@@ -13,6 +13,11 @@ const UploadFile=async(req,res)=>{
     res.send(data);
 
 }
+const DisplayData=async(req,res)=>{
+    const data=await StuModels.find();
+    res.send(data);
+}
 module.exports={
     UploadFile,
+    DisplayData
 }
