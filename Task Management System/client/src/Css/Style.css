@@ -1,0 +1,53 @@
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#firstdiv
+{
+    margin-top: -15px;
+    height: 420px;
+    padding: 15px;
+    width: 100%;
+    align-items: center;
+    /* border:2px solid black; */
+    background-color: #dfecec;
+    
+}
+#seconddiv
+{
+    border:1px solid black;
+    height: 350px;
+    width: 400px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    background-color: #568f8f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#modelss{
+    /* border:2px solid black; */
+    height: 315px;
+    width: 350px;
+    background-color: #dfecec;
+    border-radius: 25px;
+}
+#formss{
+  margin-top: 42px;
+  width: 90%;
+}
+#formsss{
+    width: 90%;
+}
+#options{
+    width: 90%;
+    height: 60px;
+  }
+#btn{
+    height: 40px;
+}

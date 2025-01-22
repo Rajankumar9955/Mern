@@ -40,10 +40,10 @@ const TopMenu=()=>{
                     <NavDropdown.Item href="#action4">
                       Another action
                     </NavDropdown.Item>
-                    <NavDropdown.Divider />
+                    {/* <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5">
                       Something else here
-                    </NavDropdown.Item>
+                    </NavDropdown.Item> */}
                   </NavDropdown>
                 </Nav>
                 <Form className="d-flex">
