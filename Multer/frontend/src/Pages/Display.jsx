@@ -24,7 +24,9 @@ const Display=()=>{
         return(
             <>
                  <tr>
-                     <td><img src={key.imgname} alt="" /></td>
+                     <td>
+                        <img src={`http://localhost:8000/uploads/${key.imgname}`} alt="" style={{height:"100px",width:"100px"}} />
+                     </td>
                      <td>{key.rollno}</td>
                      <td>{key.name}</td>
                      <td>{key.city}</td>
@@ -41,11 +43,11 @@ const Display=()=>{
              <th>Rollno</th>
              <th>Name</th>
              <th>City</th>
-          {ans}
         </tr>
+        {ans}
       </thead>
       </Table>
         </>
     )
 }
-export default Display
+export default Display;
