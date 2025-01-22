@@ -9,6 +9,7 @@ const Insert=()=>{
     const [myfile,setMyfile]=useState("");
 
     const onChangeHandler=(e)=>{
+        console.log(e.target.files[0]);
         setMyfile(e.target.files[0]);
     }
     const handleInput=(e)=>{
@@ -17,7 +18,7 @@ const Insert=()=>{
         setInput(values=>({...values, [name]:value}));
         console.log(input);
     }
-    const handleSubmit= async()=>{
+    const handleSubmit = async()=>{
         const formData=new FormData();
         formData.append('photo', myfile);
         formData.append('rollno', input.rollno);
@@ -26,7 +27,7 @@ const Insert=()=>{
         
         const res=await axios.post('http://localhost:8000/multerexample/uploadfile', formData)
         alert("SuccessFully Upload On Server");
-    }
+    };
     return(
         <>
              <h1 align="center">Insert Pages</h1>
@@ -46,7 +47,7 @@ const Insert=()=>{
                 </FloatingLabel>
 
                 <FloatingLabel controlId="floatingPassword" label="Upload File" className="mb-1">
-                <Form.Control type="file" placeholder="name@example.com" name='file'onChange={onChangeHandler}/>
+                <Form.Control type="file" placeholder="name@example.com" name='file' onChange={onChangeHandler}/>
                 </FloatingLabel>
                     
                 <Button variant="success" onClick={handleSubmit} style={{marginBottom:"-10px"}}>Submit</Button>
