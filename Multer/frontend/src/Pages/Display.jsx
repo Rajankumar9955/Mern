@@ -24,10 +24,10 @@ const Display=()=>{
         return(
             <>
                  <tr>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
+                     <td><img src={key.imgname} alt="" /></td>
+                     <td>{key.rollno}</td>
+                     <td>{key.name}</td>
+                     <td>{key.city}</td>
                  </tr>   
             </>
         )
@@ -37,10 +37,10 @@ const Display=()=>{
          <Table striped bordered hover>
       <thead>
         <tr>
-          <th>Rollno</th>
-          <th>Name</th>
-          <th>City</th>
-          <th>Photo</th>
+             <th>Photo</th>
+             <th>Rollno</th>
+             <th>Name</th>
+             <th>City</th>
           {ans}
         </tr>
       </thead>
