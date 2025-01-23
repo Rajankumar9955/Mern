@@ -30,16 +30,16 @@ const UserCreate=()=>{
                <div id='firstdiv1' >
                   <div id='seconddiv' align="center">
       
-                              <div id='modelss'>        
-                                 <FloatingLabel id='formss1'
+                              <div id='modelss'>      
+                                 <FloatingLabel controlId="floatingPassword" label="Enter User ID" id='formss1'className="mb-1">
+                                 <Form.Control type="=text" placeholder="Password" name='userid' value={input.userid} onChange={handleInput}/>
+                                 </FloatingLabel>  
+                                 <FloatingLabel id='formsss'
                                  controlId="floatingInput" label="Enter Name" className="mb-1">
                                  <Form.Control type="text" placeholder="name@example.com"  name='name' value={input.name} onChange={handleInput}/>
                                  </FloatingLabel>
                                  <FloatingLabel controlId="floatingPassword" label="Enter Email" id='formsss'className="mb-1">
                                  <Form.Control type="email" placeholder="Password"  name='email' value={input.email} onChange={handleInput}/>
-                                 </FloatingLabel>
-                                 <FloatingLabel controlId="floatingPassword" label="Enter Designation" id='formsss'className="mb-1">
-                                 <Form.Control type="=text" placeholder="Password" name='designation' value={input.designation} onChange={handleInput}/>
                                  </FloatingLabel>
                                  <FloatingLabel controlId="floatingPassword" label="Enter Password" id='formsss'className="mb-1">
                                  <Form.Control type="password" placeholder="Password" name='password' value={input.password} onChange={handleInput}/>
