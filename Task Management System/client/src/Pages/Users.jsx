@@ -29,11 +29,11 @@ const Users=()=>{
     const logout=()=>{
         localStorage.clear();
         navigate("/login")
-        message.error("Your have been Log-Out");
+        message.error("Your are Loged-Out");
     }
     return(
         <>
-          <h2 align="center" style={{fontf}}>USER DASHBOARD</h2>
+          <h2 align="center" style={{fontFamily:"cursive"}}>USER DASHBOARD</h2>
          <div style={{marginTop:"20px"}}>
     <Container fluid>
             <Row>
@@ -53,7 +53,7 @@ const Users=()=>{
               </Col>
               <Col>
                             <div id='usersection11' >
-                                <h4>Rajan Kumar</h4>     
+                                <h4 align="center"style={{marginTop:"10px",marginBottom:"10px"}}>Your Task</h4>     
                             </div>
               </Col>
             </Row>

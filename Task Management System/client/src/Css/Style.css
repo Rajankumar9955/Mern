@@ -94,6 +94,8 @@
 }
 #usersection11{
     border: 2px solid black;
+    height: 400px;
+    border-radius: 15px;
 }
 #usersection1{
     /* border: 2px solid black; */
@@ -116,4 +118,17 @@
 #usersection4{
     margin-top: 105px;
     margin-left: 35px;
+}
+#usercreate1{
+    height: 55px;
+    width:130px;
+    border: 2px solid black;
+    margin-top: 15px;
+    border-radius: 15px;
+    background-color:#95b0ea;
+    color: white;
+}
+#usercreate1:hover{
+        background-color: beige;
+        color: rgb(169, 111, 111);
 }

@@ -25,6 +25,9 @@ const Login=()=>{
                      console.log(response.data)
                   if(response.status==200)
                   {
+                      // ----------------------------------------login start --
+                      localStorage.setItem("userid", response.data.userid);
+                      //   ----------------------------------------login end
                         message.success("Login SuccessFully");
                         navigate("/dashboard");
                   }
@@ -42,7 +45,7 @@ const Login=()=>{
                   {
                     // ----------------------------------------login start --
                       localStorage.setItem("username", response.data.name);
-                      localStorage.setItem("useremail", response.data.email)
+                      localStorage.setItem("useremail", response.data.email);
                     //   ----------------------------------------login end
                        message.success("Login SuccessFully");
                        navigate("/users")
