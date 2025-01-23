@@ -17,19 +17,19 @@ const UserCreate=()=>{
                               <div id='modelss'>        
                                  <FloatingLabel id='formss1'
                                  controlId="floatingInput" label="Enter Name" className="mb-1">
-                                 <Form.Control type="text" placeholder="name@example.com" />
+                                 <Form.Control type="text" placeholder="name@example.com"  name='name' value={input.name} onChange={handleInput}/>
                                  </FloatingLabel>
                                  <FloatingLabel controlId="floatingPassword" label="Enter Email" id='formsss'className="mb-1">
-                                 <Form.Control type="email" placeholder="Password" />
+                                 <Form.Control type="email" placeholder="Password"  name='password' value={input.password} onChange={handleInput}/>
                                  </FloatingLabel>
-                                 <FloatingLabel controlId="floatingPassword" label="Enter Degignation" id='formsss'className="mb-1">
+                                 <FloatingLabel controlId="floatingPassword" label="Enter Designation" id='formsss'className="mb-1">
                                  <Form.Control type="=text" placeholder="Password" />
                                  </FloatingLabel>
                                  <FloatingLabel controlId="floatingPassword" label="Enter Password" id='formsss'className="mb-1">
                                  <Form.Control type="password" placeholder="Password" />
                                  </FloatingLabel>
 
-                                 <Button variant="success" id='btn'>CREATE</Button>
+                                 <Button variant="success" id='btn' onClick={handleSubmit}>CREATE</Button>
                               </div>
                   </div>
                </div>

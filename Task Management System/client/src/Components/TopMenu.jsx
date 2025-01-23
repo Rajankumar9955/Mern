@@ -25,7 +25,7 @@ const TopMenu=()=>{
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
+                  Welcome Boss
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>

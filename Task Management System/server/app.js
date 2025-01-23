@@ -6,15 +6,18 @@ const app=express();
 const cors=require("cors");
 const mongoose=require("mongoose");
 const bodyparser=require("body-parser");
-const TaskRoutes=require("") //-----------------------------------
-mongoose.connect("").then((res)=>{
+const AdminRoutes=require("./Routes/adminRoutes") 
+mongoose.connect("mongodb://127.0.0.1:27017/Task_Management").then((res)=>{
     console.log("Database Connected!!");
 })
 
 app.use(cors());
 
-app.use("") //---------------------------------
+app.use(bodyparser.urlencoded({ extended: true }))
+app.use(bodyparser.json())
 
-app.listen(8000, ()=>{
-    console.log("Server Run on 8000 Port!");
+app.use("/admin", AdminRoutes) 
+
+app.listen(8080, ()=>{
+    console.log("Server Run on 8080 Port!");
 })
