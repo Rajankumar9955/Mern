@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form';
 import axios from "axios"
 import {message} from "antd"
 import { useNavigate } from 'react-router-dom';
+import LocaleProvider from 'antd/es/locale';
 
 const Login=()=>{
     const navigate=useNavigate();
@@ -39,8 +40,12 @@ const Login=()=>{
                   console.log(response.data);
                   if(response.status==200)
                   {
+                    // ----------------------------------------login start --
+                      localStorage.setItem("username", response.data.name);
+                      localStorage.setItem("useremail", response.data.email)
+                    //   ----------------------------------------login end
                        message.success("Login SuccessFully");
-                       navigate("/dashboard")
+                       navigate("/users")
                   }
                } catch (error) {
                         message.error(error.response.data.msg);

@@ -92,3 +92,28 @@
     border-radius: 15px;
     background-color: #b4c4e7;
 }
+#usersection11{
+    border: 2px solid black;
+}
+#usersection1{
+    /* border: 2px solid black; */
+    margin-bottom: 15px;
+}
+#usersection2{
+    /* border: 2px solid black; */
+    
+}
+#usersection3{
+    /* border: 2px solid black; */
+    width: 90%;
+    height: 400px;
+    /* margin-top: 15px; */
+    border-radius: 15px;
+    background-color: #748181;
+    color: white;
+    display: flex;
+}
+#usersection4{
+    margin-top: 105px;
+    margin-left: 35px;
+}
