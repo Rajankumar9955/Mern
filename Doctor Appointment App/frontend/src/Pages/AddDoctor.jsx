@@ -29,8 +29,9 @@ const AddDoctor=()=>{
 
     return(
         <>
-      <div align="center"style={{marginTop:"100px",height:"410px"}}>
-        <div style={{width:"400px"}}>
+      <div align="center"style={{marginTop:"18px",height:"410px"}} id='loginone'>
+        <div id='logintwo11'>
+        <div style={{width:"400px"}} id='loginthree'>
         <FloatingLabel controlId="floatingInput" label="Doctor Name" className="mb-1">
         <Form.Control type="text" placeholder="name@example.com" name='doctorname' value={input.doctorname}  onChange={handleInput} />
       </FloatingLabel>
@@ -48,6 +49,7 @@ const AddDoctor=()=>{
       </FloatingLabel>
       <Button variant="success" onClick={handleSubmit}>ADD</Button>
         </div>
+      </div>
       </div>
         </>
     )

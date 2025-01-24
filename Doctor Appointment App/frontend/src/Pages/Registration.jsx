@@ -27,8 +27,10 @@ const Registration=()=>{
 
     return(
         <>
-      <div align="center"style={{marginTop:"100px",height:"410px"}}>
-        <div style={{width:"400px"}}>
+      <div align="center"style={{marginTop:"60px",height:"410px"}} id='loginone'>
+        <h4>Patient's Registration</h4>
+        <div id='logintwo'>
+        <div style={{width:"400px"}} id='loginthree'>
         <FloatingLabel controlId="floatingInput" label="Name" className="mb-1">
         <Form.Control type="text" placeholder="name@example.com" name='name' value={input.name}  onChange={handleInput} />
       </FloatingLabel>
@@ -40,6 +42,7 @@ const Registration=()=>{
       </FloatingLabel>
       <Button variant="success" onClick={handleSubmit}>Register Here!!</Button>
         </div>
+      </div>
       </div>
         </>
     )

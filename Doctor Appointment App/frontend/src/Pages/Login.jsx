@@ -25,18 +25,30 @@ const Login=()=>{
             if(response.status==200)
             {
                   message.success("Now! You are loged-In");
-                  navigate("/contact")
+                  navigate("/dashboard")
             }
           } catch (error) {
             message.error(error.response.data.msg);
+          }
+        }
+        else if(usertype=='Patient')
+        {
+          try {
+             let api="http://localhost:8000/patient/patientlogin";
+             const response=await axios.post(api,{useremail:useremail, password:password});
+             console.log(response.data);
+          } catch (error) {
+            message.error(error);
           }
         }
     }
 
     return(
         <>
-      <div align="center"style={{marginTop:"100px",height:"410px"}}>
-        <div style={{width:"400px"}}>
+      <div align="center"style={{marginTop:"60px",height:"410px"}} id='loginone'>
+        <h4>Login Here!</h4>
+        <div id='logintwo'>
+        <div style={{width:"400px"}} id='loginthree'>
       <FloatingLabel controlId="floatingInput" label="Email" className="mb-1">
         <Form.Control type="email" placeholder="name@example.com" name='email'  value={useremail} onChange={(e)=>{setUserEmail(e.target.value)}} />
       </FloatingLabel>
@@ -52,6 +64,7 @@ const Login=()=>{
       
       <Button variant="success" onClick={handleSubmit}>Login</Button>
         </div>
+      </div>
       </div>
         </>
     )
