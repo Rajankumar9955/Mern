@@ -29,7 +29,7 @@ const Users=()=>{
     const logout=()=>{
         localStorage.clear();
         navigate("/login")
-        message.error("Your are Loged-Out");
+        message.error("Your are Loged-Out : "+username);
     }
     return(
         <>

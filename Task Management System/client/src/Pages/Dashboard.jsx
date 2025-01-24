@@ -41,7 +41,7 @@ const Dashboard=()=>{
                               <div id='usercreate1'>
                                <Link to="userscreate" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Task<br />Status</Link>
                               </div>
-                              <Button variant="warning"  style={{marginTop:"20px"}}>Danger</Button>
+                              <Button variant="warning"  style={{marginTop:"20px"}}>Log-Out</Button>
                         </div>
                        </div>
               </Col>
