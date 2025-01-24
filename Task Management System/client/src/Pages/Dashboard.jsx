@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import { message } from 'antd';
 const Dashboard=()=>{
     const navigate=useNavigate()
-    const [user,setUser]=useState("");
+    const [userid,setUserId]=useState("");
 
     useEffect(()=>{
         if(localStorage.getItem("userid")==null)
@@ -17,13 +17,13 @@ const Dashboard=()=>{
             navigate("/login");
         }
         else{
-            setUser(localStorage.getItem("userid"));
+            setUserId(localStorage.getItem("userid"));
         }
     },[])
-    
+
     const logoutadmin=()=>{
         localStorage.clear();
-        message.success("You are Loged-out");
+        message.success("You are Loged-out : "+ userid);
         navigate("/login")
     }
 
@@ -33,10 +33,10 @@ const Dashboard=()=>{
         <div style={{marginTop:"20px"}}>
     <Container fluid>
             <Row>
-              <Col>
+              <Col md="4">
                        <div id='usercreatemain'>
                         <div id='usercreatesecond' align="center" >
-                            <h4 style={{marginTop:"20px"}}>Welcome : {user}</h4>
+                            <h4 style={{marginTop:"20px"}}>Welcome : {userid}</h4>
                               <div id='usercreate'>
                                <Link to="userscreate" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >New <br />Create</Link>
                               </div>
@@ -50,7 +50,7 @@ const Dashboard=()=>{
                         </div>
                        </div>
               </Col>
-              <Col>
+              <Col md="8">
                             <div>
                                 <Outlet/>
                             </div>

@@ -27,9 +27,8 @@ const UserCreate=()=>{
         <>
          
          <div>
-               <div id='firstdiv1' >
+               <div id='firstdiv1' align="center">
                   <div id='seconddiv' align="center">
-      
                               <div id='modelss'>      
                                  <FloatingLabel controlId="floatingPassword" label="Enter User ID" id='formss1'className="mb-1">
                                  <Form.Control type="=text" placeholder="Password" name='userid' value={input.userid} onChange={handleInput}/>

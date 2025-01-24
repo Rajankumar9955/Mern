@@ -24,7 +24,12 @@ const UserLogin=async(req,res)=>{
     }
     res.status(200).json(User);
 }
+const UserDataDisplay=async(req,res)=>{
+    const data=await UserModels.find();
+    res.send(data);
+}
 module.exports={
     Usercreate,
-    UserLogin
+    UserLogin,
+    UserDataDisplay
 }
