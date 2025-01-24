@@ -5,24 +5,32 @@ import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import axios from "axios";
 import {message} from "antd"
+import { useNavigate } from 'react-router-dom';
 
 const Login=()=>{
-    const [input,setInput]=useState({})
+  const navigate=useNavigate();
+    const [useremail,setUserEmail]=useState("");
+    const [password, setPassword]=useState("");
+    const [usertype,setUserType]=useState("");
+     console.log(useremail,password,usertype);
+   
 
-    
-    const handleInput=(e)=>{
-        const name=e.target.name;
-        const value=e.target.value;
-        setInput(values=>({...values, [name]:value}));
-        console.log(input);
-    }
-
-    const handleSubmit=()=>{
-        let api="http://localhost:8000/doctors/login";
-        axios.post(api,input).then((res)=>{
-            console.log(input);
-            message.success("Your Registration Has Been Done!!")
-        })
+    const handleSubmit= async()=>{
+        if(usertype=='Doctor')
+        {
+          try {
+            let api="http://localhost:8000/admin/adminlogin";
+            let response=await axios.post(api,{useremail:useremail, password:password});
+            console.log(response.data);
+            if(response.status==200)
+            {
+                  message.success("Now! You are loged-In");
+                  navigate("/contact")
+            }
+          } catch (error) {
+            message.error(error.response.data.msg);
+          }
+        }
     }
 
     return(
@@ -30,11 +38,18 @@ const Login=()=>{
       <div align="center"style={{marginTop:"100px",height:"410px"}}>
         <div style={{width:"400px"}}>
       <FloatingLabel controlId="floatingInput" label="Email" className="mb-1">
-        <Form.Control type="email" placeholder="name@example.com" name='email'  value={input.email} onChange={handleInput} />
+        <Form.Control type="email" placeholder="name@example.com" name='email'  value={useremail} onChange={(e)=>{setUserEmail(e.target.value)}} />
       </FloatingLabel>
       <FloatingLabel controlId="floatingInput" label="Password" className="mb-1">
-        <Form.Control type="password" placeholder="name@example.com"  name='password' value={input.password}  onChange={handleInput} />
+        <Form.Control type="password" placeholder="name@example.com"  name='password' value={password}  onChange={(e)=>{setPassword(e.target.value)}} />
       </FloatingLabel>
+      
+      <Form.Select aria-label="Default select example" id='options'className="mb-2" name='usertype'  value={usertype}  onChange={(e)=>{setUserType(e.target.value)}}>
+                                  <option>Select Option</option>
+                                  <option >Doctor</option>
+                                  <option >Patient</option>
+                                 </Form.Select>
+      
       <Button variant="success" onClick={handleSubmit}>Login</Button>
         </div>
       </div>

@@ -8,6 +8,12 @@
 #btn1{
    border-radius: 5px;
 }
+#btn2{
+    border-radius: 5px;
+    width: 60px;
+    margin-left: 7px;
+    margin-top: 10px;
+ }
 #btn1:hover{
     background-color: rgb(245, 144, 144);
     color: white;
