@@ -9,19 +9,23 @@ import Button from 'react-bootstrap/Button';
 import { message } from 'antd';
 const Dashboard=()=>{
     const navigate=useNavigate()
+    const [user,setUser]=useState("");
 
-    // useEffect(()=>{
-    //     if(localStorage.getItem("userid")==null)
-    //     {
-    //         navigate("/login");
-    //     }
-        
-    // },[])
-    // const logout=()=>{
-    //     localStorage.clear();
-    //     message.success("You are Loged-out");
-    //     navigate("/login")
-    // }
+    useEffect(()=>{
+        if(localStorage.getItem("userid")==null)
+        {
+            navigate("/login");
+        }
+        else{
+            setUser(localStorage.getItem("userid"));
+        }
+    },[])
+    
+    const logoutadmin=()=>{
+        localStorage.clear();
+        message.success("You are Loged-out");
+        navigate("/login")
+    }
 
     return(
         <>
@@ -32,16 +36,17 @@ const Dashboard=()=>{
               <Col>
                        <div id='usercreatemain'>
                         <div id='usercreatesecond' align="center" >
+                            <h4 style={{marginTop:"20px"}}>Welcome : {user}</h4>
                               <div id='usercreate'>
                                <Link to="userscreate" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >New <br />Create</Link>
                               </div>
                               <div id='usercreate1'>
-                               <Link to="userscreate" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Assign <br />Task</Link>
+                               <Link to="userdata" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Assign <br />Task</Link>
                               </div>
                               <div id='usercreate1'>
                                <Link to="userscreate" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Task<br />Status</Link>
                               </div>
-                              <Button variant="warning"  style={{marginTop:"20px"}}>Log-Out</Button>
+                              <Button variant="warning"  style={{marginTop:"20px"}} onClick={logoutadmin}>Log-Out</Button>
                         </div>
                        </div>
               </Col>

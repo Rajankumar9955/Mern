@@ -44,7 +44,7 @@ const Users=()=>{
                                             <div id='usersection4'>
                                             <h3>Welcome :  {username}</h3>
                                             <h6>Email : {useremail}</h6>
-                                            <Button variant="warning" onClick={logout}>Danger</Button>
+                                            <Button variant="warning" onClick={logout}>Log-out</Button>
                                             </div>
                                         </div>
                                         

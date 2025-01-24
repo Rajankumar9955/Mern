@@ -72,9 +72,9 @@ const Login=()=>{
                                  </FloatingLabel>
 
                                  <Form.Select aria-label="Default select example" id='options'className="mb-2" name='usertype'  value={usertype}  onChange={(e)=>{setUserType(e.target.value)}}>
-                                  <option>Select Option</option>
-                                  <option >ADMIN</option>
-                                  <option >EMPLOYEE</option>
+                                  <option>Login as a</option>
+                                  <option value="ADMIN">ADMIN</option>
+                                  <option value="EMPLOYEE">EMPLOYEE</option>
                                  </Form.Select>
 
                                  <Button variant="success" id='btn' onClick={handleSubmit}>Log-in</Button>
