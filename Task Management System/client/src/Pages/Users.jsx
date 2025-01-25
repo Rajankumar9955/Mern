@@ -12,6 +12,7 @@ const Users=()=>{
     const navigate=useNavigate();
     const [username,setUserName]=useState("");
     const [useremail,setUserEmail]=useState("");
+    const [designation,setDesignation]=useState("");
 
     useEffect(()=>{
         if(localStorage.getItem("username")==null)
@@ -22,6 +23,7 @@ const Users=()=>{
         {
             setUserName(localStorage.getItem("username"));
             setUserEmail(localStorage.getItem("useremail"));
+            setDesignation(localStorage.getItem("designation"));
         }
        
     },[])
@@ -44,6 +46,7 @@ const Users=()=>{
                                             <div id='usersection4'>
                                             <h3>Welcome :  {username}</h3>
                                             <h6>Email : {useremail}</h6>
+                                            <h6>Your Designation : {designation}</h6>
                                             <Button variant="warning" onClick={logout}>Log-out</Button>
                                             </div>
                                         </div>

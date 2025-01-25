@@ -43,7 +43,15 @@ const UserCreate=()=>{
                                  <FloatingLabel controlId="floatingPassword" label="Enter Password" id='formsss'className="mb-1">
                                  <Form.Control type="password" placeholder="Password" name='password' value={input.password} onChange={handleInput}/>
                                  </FloatingLabel>
+                                 <div  id='formsss111'>
                                  <Button variant="success" id='btn' onClick={handleSubmit}>CREATE</Button>
+                                 <Form.Select aria-label="Default select example" id='formsss11' name='designation' value={input.designation} onChange={handleInput}>
+                                     <option >Select Designation</option>
+                                     <option >Designer</option>
+                                     <option >Backend</option>
+                                     <option >Team Leader</option>
+                                </Form.Select>
+                                 </div>
                               </div>
                   </div>
                </div>

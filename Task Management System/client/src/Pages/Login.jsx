@@ -46,6 +46,8 @@ const Login=()=>{
                     // ----------------------------------------login start --
                       localStorage.setItem("username", response.data.name);
                       localStorage.setItem("useremail", response.data.email);
+                      localStorage.setItem("designation", response.data.designation);
+
                     //   ----------------------------------------login end
                        message.success("Login SuccessFully");
                        navigate("/users")

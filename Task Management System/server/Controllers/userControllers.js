@@ -2,12 +2,14 @@
 
 const UserModels=require("../Models/userModels");
 const Usercreate=async(req,res)=>{
-    const {userid,name,email,password}=req.body;
+    const {userid,name,email,password,designation}=req.body;
+    console.log(req.body);
      const data=await UserModels.create({
         userid:userid,
         name:name,
         email:email,
-        password:password
+        password:password,
+        designation:designation
      })
     res.send(data);
 }
