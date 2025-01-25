@@ -32,6 +32,7 @@ const UserData=()=>{
                 <td>{key.userid}</td>
                 <td>{key.name}</td>
                 <td>{key.email}</td>
+                <td>{key.designation}</td>
                 <td>
                     <div id="AssignTask">
                     <Link to="/dashboard/assigntask" id="AssignTask1">Assign Task</Link>
@@ -50,6 +51,7 @@ const UserData=()=>{
           <th>User ID</th>
           <th>Name</th>
           <th>Email</th>
+          <th>Designation</th>
           <th>Assign Task</th>
         </tr>
         {ans}
