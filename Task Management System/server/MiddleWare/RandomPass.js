@@ -1,12 +1,12 @@
 const RandomPass=()=>{
 
-const String="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+const string="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
 
-const MyPass="";
+let MyPass="";
 for(var i=0; i<8; i++)
       {
-          MyNo=Math.floor(Math.random()*String.length);
-          MyPass+=String.charAt(MyNo);
+          let MyNo=Math.floor(Math.random()*string.length);
+          MyPass+=string.charAt(MyNo);
       }
       
       return MyPass;

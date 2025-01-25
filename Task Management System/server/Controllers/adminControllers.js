@@ -7,7 +7,7 @@ const AdminLogin=async(req,res)=>{
     const Admin=await AdminModels.findOne({email:email})
     if(!Admin)
     {
-        res.status(400).json({msg:"Invalid UserId"});
+        res.status(400).json({msg:"Invalid Email ID"});
     }
     if(Admin.password!=password)
     {

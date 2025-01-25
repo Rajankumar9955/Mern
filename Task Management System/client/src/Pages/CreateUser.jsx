@@ -21,7 +21,7 @@ const UserCreate=()=>{
     const handleSubmit=()=>{
             let api="http://localhost:8080/users/usercreate";
              axios.post(api,input);
-            message.success("User Created!!");
+            message.success("Email Sent and User Created!!");
     }
     return(
         <>
@@ -51,13 +51,11 @@ const UserCreate=()=>{
                                      <option value="Executive Manager">Executive Manager</option>
                                      <option value="Mern FullStack Developer">Mern FullStack Developer</option>
                                 </Form.Select>
-                                
+
                                  <FloatingLabel controlId="floatingPassword" label="Enter Email" id='formsss'className="mb-1">
                                  <Form.Control type="email" placeholder="Password"  name='email' value={input.email} onChange={handleInput}/>
                                  </FloatingLabel>
-                                 <FloatingLabel controlId="floatingPassword" label="Enter Password" id='formsss'className="mb-1">
-                                 <Form.Control type="password" placeholder="Password" name='password' value={input.password} onChange={handleInput}/>
-                                 </FloatingLabel>
+                                 
                                 
                                  <Button variant="success" id='btn' onClick={handleSubmit}>CREATE</Button>
                                 

@@ -7,7 +7,6 @@ const RandomPass=require("../MiddleWare/RandomPass")
 
 const Usercreate=async(req,res)=>{
     const {name,email,designation}=req.body;
-    console.log(req.body);
     const MyPass=RandomPass();
 
     const mailOptions = {
@@ -28,7 +27,7 @@ const Usercreate=async(req,res)=>{
          })
          res.status(200).json({ success: true, message: 'Email sent', info });
       } catch (error) {
-        console.error('Erro to Sending Mail:',error)
+        console.error('Error to Sending Mail:',error)
         res.status(500).json({ success: false, error: error.message });
       }
      
@@ -39,7 +38,7 @@ const UserLogin=async(req,res)=>{
     const User=await UserModels.findOne({email:email});
     if(!User)
     {
-        res.status(400).json({msg:"Invalid User ID"});
+        res.status(400).json({msg:"Invalid Email ID"});
     }
     if(User.password!=password)
     {

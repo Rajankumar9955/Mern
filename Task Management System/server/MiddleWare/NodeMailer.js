@@ -6,7 +6,7 @@ require("dotenv").config();
 const passkeys=process.env.PASSKEYS;
 
 const transporter=nodemailer.createTransport({
-    service:'mail',
+    service:'gmail',
     auth:{
         user:'krajan92946@gmail.com',
         pass:passkeys,
