@@ -5,13 +5,17 @@ const express=require("express");
 const app=express();
 const cors=require("cors");
 const mongoose=require("mongoose");
+require("dotenv").config();
 const bodyparser=require("body-parser");
 
 const AdminRoutes=require("./Routes/adminRoutes"); //admin Routes
 
 const UserRoutes=require("./Routes/userRoutes");  //user Routes
 
-mongoose.connect("mongodb://127.0.0.1:27017/Task_Management").then((res)=>{
+const DataBase=process.env.DBCONNECTION
+const port=process.env.PORT
+
+mongoose.connect(DataBase).then((res)=>{
     console.log("Database Connected!!");
 })
 
@@ -23,6 +27,6 @@ app.use(bodyparser.json())
 app.use("/admin", AdminRoutes) 
 app.use("/users", UserRoutes) 
 
-app.listen(8080, ()=>{
-    console.log("Server Run on 8080 Port!");
+app.listen(port, ()=>{
+    console.log(`Server Run on ${port} Port!`);
 })
