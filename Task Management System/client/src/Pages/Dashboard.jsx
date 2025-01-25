@@ -10,21 +10,21 @@ import { message } from 'antd';
 const Dashboard=()=>{
     
     const navigate=useNavigate()
-    const [userid,setUserId]=useState("");
+    const [user,setUser]=useState("");
 
     useEffect(()=>{
-        if(localStorage.getItem("userid")==null)
+        if(localStorage.getItem("usertype")==null)
         {
             navigate("/login");
         }
         else{
-            setUserId(localStorage.getItem("userid"));
+            setUser(localStorage.getItem("usertype"));
         }
     },[])
 
     const logoutadmin=()=>{
         localStorage.clear();
-        message.success("You are Loged-out : "+ userid);
+        message.success("You are Loged-out : "+ user);
         navigate("/login")
     }
 
@@ -37,7 +37,7 @@ const Dashboard=()=>{
               <Col md="4">
                        <div id='usercreatemain'>
                         <div id='usercreatesecond' align="center" >
-                            <h4 style={{marginTop:"20px"}}>Welcome : {userid}</h4>
+                            <h4 style={{marginTop:"20px"}}>Welcome : {user}</h4>
                               <div id='usercreate'>
                                <Link to="userscreate" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >New <br />Create</Link>
                               </div>

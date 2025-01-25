@@ -12,21 +12,22 @@ import LocaleProvider from 'antd/es/locale';
 
 const Login=()=>{
     const navigate=useNavigate();
-    const [userid, setUserId]=useState("");
+    const [email, setEmail]=useState("");
     const [password,setPassword]=useState("");
     const [usertype,setUserType]=useState("");
+    console.log(email,password,usertype);
 
 
     const handleSubmit=async()=>{
            if(usertype=='ADMIN'){
                 try {
                     let api="http://localhost:8080/admin/adminlogin";
-                     let response=await axios.post(api,{userid:userid,password:password});
+                     let response=await axios.post(api,{email:email,password:password,usertype:usertype});
                      console.log(response.data)
                   if(response.status==200)
                   {
                       // ----------------------------------------login start --
-                      localStorage.setItem("userid", response.data.userid);
+                      localStorage.setItem("usertype", response.data.usertype);
                       //   ----------------------------------------login end
                         message.success("Login SuccessFully");
                         navigate("/dashboard");
@@ -39,7 +40,7 @@ const Login=()=>{
            {
                try {
                   let api="http://localhost:8080/users/userlogin";
-                  let response=await axios.post(api,{userid:userid, password:password})
+                  let response=await axios.post(api,{email:email, password:password})
                   console.log(response.data);
                   if(response.status==200)
                   {
@@ -66,8 +67,8 @@ const Login=()=>{
       
                               <div id='modelss'>        
                                  <FloatingLabel id='formss'
-                                 controlId="floatingInput" label="Enter Your ID" className="mb-1">
-                                 <Form.Control type="email" placeholder="name@example.com" value={userid} onChange={(e)=>{setUserId(e.target.value)}} />
+                                 controlId="floatingInput" label="Enter Your Email" className="mb-1">
+                                 <Form.Control type="email" placeholder="name@example.com" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
                                  </FloatingLabel>
                                  <FloatingLabel controlId="floatingPassword" label=" Enter Your Password" id='formsss'className="mb-1">
                                  <Form.Control type="password" placeholder="Password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>

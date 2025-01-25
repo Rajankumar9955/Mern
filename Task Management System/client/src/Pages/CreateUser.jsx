@@ -29,29 +29,39 @@ const UserCreate=()=>{
          <div>
                <div id='firstdiv1' align="center">
                   <div id='seconddiv' align="center">
-                              <div id='modelss'>      
-                                 <FloatingLabel controlId="floatingPassword" label="Enter User ID" id='formss1'className="mb-1">
-                                 <Form.Control type="=text" placeholder="Password" name='userid' value={input.userid} onChange={handleInput}/>
-                                 </FloatingLabel>  
-                                 <FloatingLabel id='formsss'
+                              <div id='modelss'>       
+                                 <FloatingLabel id='formsss' style={{marginTop:"20px"}}
                                  controlId="floatingInput" label="Enter Name" className="mb-1">
                                  <Form.Control type="text" placeholder="name@example.com"  name='name' value={input.name} onChange={handleInput}/>
                                  </FloatingLabel>
+
+                                 <Form.Select aria-label="Default select example" id='formsss11' name='designation'  onChange={handleInput}>
+                                     <option >Select Designation</option>
+                                     <option value="Designer">Designer</option>
+                                     <option value="Backend">Backend</option>
+                                     <option value="Team Leader">Team Leader</option>
+                                     <option value="UI/UX Designer">UI/UX Designer</option>
+                                     <option value="Programmer">Programmer</option>
+                                     <option value="DataBase Designer">DataBase Designer</option>
+                                     <option value="Analyst">Anylist</option>
+                                     <option value="Project Manager">Project Manager</option>
+                                     <option value="Developer">Developer</option>
+                                     <option value="HR">HR</option>
+                                     <option value="Manager">Manager</option>
+                                     <option value="Executive Manager">Executive Manager</option>
+                                     <option value="Mern FullStack Developer">Mern FullStack Developer</option>
+                                </Form.Select>
+                                
                                  <FloatingLabel controlId="floatingPassword" label="Enter Email" id='formsss'className="mb-1">
                                  <Form.Control type="email" placeholder="Password"  name='email' value={input.email} onChange={handleInput}/>
                                  </FloatingLabel>
                                  <FloatingLabel controlId="floatingPassword" label="Enter Password" id='formsss'className="mb-1">
                                  <Form.Control type="password" placeholder="Password" name='password' value={input.password} onChange={handleInput}/>
                                  </FloatingLabel>
-                                 <div  id='formsss111'>
+                                
                                  <Button variant="success" id='btn' onClick={handleSubmit}>CREATE</Button>
-                                 <Form.Select aria-label="Default select example" id='formsss11' name='designation' value={input.designation} onChange={handleInput}>
-                                     <option >Select Designation</option>
-                                     <option >Designer</option>
-                                     <option >Backend</option>
-                                     <option >Team Leader</option>
-                                </Form.Select>
-                                 </div>
+                                
+                                 
                               </div>
                   </div>
                </div>
