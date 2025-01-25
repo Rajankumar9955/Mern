@@ -134,3 +134,22 @@
         background-color: beige;
         color: rgb(169, 111, 111);
 }
+#AssignTask{
+    border: 2px solid black;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    border-radius:10px;
+    background-color: rgb(192, 252, 192);
+}
+#AssignTask:hover{
+    background-color: black;
+    color: white;
+}
+#AssignTask1{
+    text-decoration:none;
+    /* color: black; */
+}
+#AssignTask1:hover{
+    color: white;
+}

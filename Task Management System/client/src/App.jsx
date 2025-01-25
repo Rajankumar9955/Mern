@@ -7,23 +7,25 @@ import UserCreate from "./Pages/CreateUser"
 import Login from "./Pages/Login"
 import Users from "./Pages/Users"
 import UserData from "./Pages/UserData"
+import AssignTask from "./Pages/AssignTask"
 
 const App=()=>{
   return(
     <>
     <BrowserRouter>
                     <Routes>
-                           <Route path="/" element={<Layout/>}>
+                          <Route path="/" element={<Layout/>}>
                             <Route index element={<Login/>}/>
                             <Route path="login" element={<Login/>}/>                            
                             <Route path="users" element={<Users/>}/>   
 
-                            <Route path="dashboard" element={<Dashboard/>}>
-                               <Route path="userscreate" element={<UserCreate/>}/>
-                               <Route path="userdata" element={<UserData/>}/>
-                            </Route>
+                                 <Route path="dashboard" element={<Dashboard/>}>
+                                    <Route path="userscreate" element={<UserCreate/>}/>
+                                    <Route path="userdata" element={<UserData/>}/>
+                                    <Route path="assigntask" element={<AssignTask/>}/>
+                                 </Route>
                             
-                           </Route>
+                          </Route>
                     </Routes>
     </BrowserRouter>
     

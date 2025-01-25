@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 
 import Table from 'react-bootstrap/Table';
+import { Link, Outlet } from "react-router-dom";
 
 
 const UserData=()=>{
@@ -20,6 +21,7 @@ const UserData=()=>{
     useEffect(()=>{
         loadData();
     },[])
+    
     let sno=0;
     const ans=data.map((key)=>{
         sno++;
@@ -30,6 +32,11 @@ const UserData=()=>{
                 <td>{key.userid}</td>
                 <td>{key.name}</td>
                 <td>{key.email}</td>
+                <td>
+                    <div id="AssignTask">
+                    <Link to="/dashboard/assigntask" id="AssignTask1">Assign Task</Link>
+                    </div>
+                </td>
             </tr>
             </>
         )
@@ -43,11 +50,11 @@ const UserData=()=>{
           <th>User ID</th>
           <th>Name</th>
           <th>Email</th>
+          <th>Assign Task</th>
         </tr>
         {ans}
       </thead>
       </Table>
-      
 
         </>
     )
