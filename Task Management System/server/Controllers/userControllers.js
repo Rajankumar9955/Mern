@@ -5,6 +5,8 @@ const UserModels=require("../Models/userModels");
 const transporter=require("../MiddleWare/NodeMailer");
 const RandomPass=require("../MiddleWare/RandomPass")
 
+const TaskModels=require("../Models/taskModels");
+
 const Usercreate=async(req,res)=>{
     const {name,email,designation}=req.body;
     const MyPass=RandomPass();
@@ -52,8 +54,18 @@ const UserDataDisplay=async(req,res)=>{
     res.send(data);
 }
 const AssignTask=async(req,res)=>{
-    console.log(req.body);
-    res.send("Ok");
+    const {empid, tasktitle,comdays,taskdescription}=req.body;
+    try {
+        const Emp= await TaskModels.create({
+            tasktitle:tasktitle,
+            completiondays:comdays,
+            taskdescription:taskdescription,
+            empid:empid
+        })
+        res.status(200).send("Task SuccessFully Assigned")
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 module.exports={

@@ -103,7 +103,7 @@ const UserData=()=>{
       </Form.Group>
       <Form.Group className="mb-1" controlId="exampleForm.ControlInput1">
         <Form.Label>Enter Completion Days</Form.Label>
-        <Form.Control type="number"  name="compays" value={input.compdays} onChange={handleInput}/>
+        <Form.Control type="number"  name="comdays" value={input.compdays} onChange={handleInput}/>
         </Form.Group>
       <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Enter Description</Form.Label>
