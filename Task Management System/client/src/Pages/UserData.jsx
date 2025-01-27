@@ -2,11 +2,45 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 
 import Table from 'react-bootstrap/Table';
-import { Link, Outlet } from "react-router-dom";
-
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
 const UserData=()=>{
     const [data,setData]=useState([]);
+
+    const [show, setShow] = useState(false);
+    const [input,setInput]=useState({});
+    const [empId, setEmpId]=useState("");
+    const handleClose = () => setShow(false);
+    const handleShow = (empid) => {
+        setEmpId(empid)
+        setShow(true);
+    }
+
+  
+    const handleInput=(e)=>{
+        const name=e.target.name;
+        const value=e.target.value;
+        setInput(values=>({...values, [name]:value}));
+        console.log(input);
+    }
+    const handleSubmit=()=>{
+        try {
+            let api="http://localhost:8080/users/assigntask";
+            const response= axios.post(api,{empid:empId, ...input});
+             message.success("User Created!!");
+        } catch (error) {
+            console.log(error);
+        }
+           
+    }
+
+
+
+
+
+
 
     const loadData= async()=>{
         try {
@@ -29,14 +63,11 @@ const UserData=()=>{
             <>
             <tr>
                 <td>{sno}</td>
-                <td>{key.userid}</td>
                 <td>{key.name}</td>
                 <td>{key.email}</td>
                 <td>{key.designation}</td>
                 <td>
-                    <div id="AssignTask">
-                    <Link to="/dashboard/assigntask" id="AssignTask1">Assign Task</Link>
-                    </div>
+                <Button variant="success" onClick={()=>{handleShow(key._id)}}>Assign Task</Button>
                 </td>
             </tr>
             </>
@@ -48,7 +79,6 @@ const UserData=()=>{
       <thead>
         <tr>
           <th>Sno</th>
-          <th>User ID</th>
           <th>Name</th>
           <th>Email</th>
           <th>Designation</th>
@@ -57,7 +87,43 @@ const UserData=()=>{
         {ans}
       </thead>
       </Table>
+{/* =================================== Model ==================== */}
+<Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Assign Task</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
 
+    <div style={{padding:"5px"}}>
+     <div style={{width:"400px",marginLeft:"25px"}}>
+     <Form>
+      <Form.Group className="mb-1" controlId="exampleForm.ControlInput1">
+        <Form.Label>Enter Task Title</Form.Label>
+        <Form.Control type="text" name="tasktitle" value={input.tasktile} onChange={handleInput}  />
+      </Form.Group>
+      <Form.Group className="mb-1" controlId="exampleForm.ControlInput1">
+        <Form.Label>Enter Completion Days</Form.Label>
+        <Form.Control type="number"  name="compays" value={input.compdays} onChange={handleInput}/>
+        </Form.Group>
+      <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Enter Description</Form.Label>
+        <Form.Control as="textarea" rows={3}  cols={4} type="text" name="taskdescription" value={input.taskdescription} onChange={handleInput}/>
+      </Form.Group>
+    </Form>
+      </div>
+      </div>
+
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="success" onClick={handleSubmit}>
+            Assign
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      
         </>
     )
 }

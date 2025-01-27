@@ -51,8 +51,14 @@ const UserDataDisplay=async(req,res)=>{
     const data=await UserModels.find();
     res.send(data);
 }
+const AssignTask=async(req,res)=>{
+    console.log(req.body);
+    res.send("Ok");
+}
+
 module.exports={
     Usercreate,
     UserLogin,
-    UserDataDisplay
+    UserDataDisplay,
+    AssignTask
 }
