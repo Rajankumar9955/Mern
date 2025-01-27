@@ -20,10 +20,13 @@ const Login=()=>{
         {
           try {
             let api="http://localhost:8000/admin/adminlogin";
-            let response=await axios.post(api,{useremail:useremail, password:password});
+            let response=await axios.post(api,{useremail:useremail, password:password,usertype:usertype});
             console.log(response.data);
             if(response.status==200)
             {
+                 localStorage.setItem("usertype",usertype);
+                 localStorage.setItem("adminemail",useremail);
+
                   message.success("Now! You are loged-In");
                   navigate("/dashboard")
             }
@@ -37,9 +40,10 @@ const Login=()=>{
              let api="http://localhost:8000/patient/patientlogin";
              const response=await axios.post(api,{useremail:useremail, password:password});
              console.log(response.data);
-             if(response.data==200)
+             if(response.status==200)
              {
                    message.success("Login SuccessFully");
+                   navigate("/patient")
              }
           } catch (error) {
             message.error(error.response.data.msg);

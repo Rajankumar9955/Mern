@@ -10,6 +10,7 @@ import Book from "./Pages/Book"
 import Registration from "./Pages/Registration"
 import Login from "./Pages/Login"
 import Dashboard from "./Pages/Dashboard"
+import Patient from "./Pages/Patient"
 
 const App=()=>{
   return(
@@ -25,6 +26,8 @@ const App=()=>{
                                  <Route path="book/:id" element={<Book/>}/>
                                  <Route path="registration" element={<Registration/>}/>
                                  <Route path="login" element={<Login/>}/>
+                                 <Route path="patient" element={<Patient/>}/>
+
                                  <Route path="dashboard" element={<Dashboard/>}>
                                        <Route path="adddoctor" element={<AddDoctor/>}/>
                                  </Route>

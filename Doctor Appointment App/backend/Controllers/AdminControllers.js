@@ -2,7 +2,7 @@
 const AdminModel=require("../Models/AdminModels")
 
 const AdminLogin=async(req,res)=>{
-    const {useremail,password}=req.body;
+    const {useremail,password,usertype}=req.body;
     const Admin=await AdminModel.findOne({useremail:useremail});
     if(!Admin)
     {
@@ -12,6 +12,7 @@ const AdminLogin=async(req,res)=>{
     {
         res.status(400).json({msg:"Invalid Password"})
     }
+    usertype:usertype
     res.status(200).json(Admin);
 }
 module.exports={
