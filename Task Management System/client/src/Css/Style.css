@@ -167,3 +167,13 @@
 #form121{
     height:40px ;
 }
+#descript{
+    height: 125px;
+}
+#formstatus{
+    /* border: 2px solid black; */
+    height: 400px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}

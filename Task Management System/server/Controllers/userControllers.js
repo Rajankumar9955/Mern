@@ -67,10 +67,15 @@ const AssignTask=async(req,res)=>{
         console.log(error)
     }
 }
+const TaskStatus=async(req,res)=>{
+    const data=await TaskModels.find().populate('empid')
+    res.send(data);
+}
 
 module.exports={
     Usercreate,
     UserLogin,
     UserDataDisplay,
-    AssignTask
+    AssignTask,
+    TaskStatus
 }

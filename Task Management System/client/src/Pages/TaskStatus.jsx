@@ -1,4 +1,4 @@
-import { message } from "antd";
+// import { message } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Table from 'react-bootstrap/Table';
@@ -19,22 +19,31 @@ const TaskStatus=()=>{
     useEffect(()=>{
         loadData()
     },[])
+
     const ans=Data.map((key)=>{
         return(
             <>
-            <tr>{key.name}</tr>
-            <tr>{key.email}</tr>
-            <tr>{key.designation}</tr>
-            <tr>{key.empid.tasktitle}</tr>
-            <tr>{key.empid.completiondays}</tr>
-            <tr>{key.empid.taskdescription}</tr>
+            <tr>
+                <td>{key.empid.name}</td>
+                <td>{key.empid.email}</td>
+                <td>{key.empid.designation}</td>
+
+                <td>{key.tasktitle}</td>
+                <td>{key.completiondays}</td>
+               <div id="descript">
+                 <td style={{width:"5000px"}}>{key.taskdescription}</td>
+               </div>
+               <td>sdf</td>
+             
+            </tr>
             </>
         )
     })
     return(
         <>
-        <h1 align="center">Task Status</h1>
-        <Table striped bordered hover variant="light">
+  
+        <div id="formstatus">
+        <Table striped bordered hover variant="light"  style={{width:"100%"}}>
       <thead>
         <tr>
           <th>Name</th>
@@ -42,11 +51,13 @@ const TaskStatus=()=>{
           <th>Designation</th>
           <th>Task Title</th>
           <th>Completion Days</th>
-          <th>Task Description</th>
+          <th style={{width:"5000px"}}>Task Description</th>
+          <th>Task Status</th>
         </tr>
         {ans}
       </thead>
       </Table>
+      </div>
         </>
     )
 }
