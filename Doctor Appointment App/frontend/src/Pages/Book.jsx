@@ -9,8 +9,9 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 import {message} from "antd"
 import { useParams } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 const Book=()=>{
+  const navigate=useNavigate();
     const {id}=useParams()
     const [input,setInput]=useState({})
 
@@ -37,6 +38,7 @@ const Book=()=>{
         axios.post(api,input).then((res)=>{
             console.log(input);
             message.success("Booking SucessFully!!")
+            navigate("/bookappoinment")
         })
     }
 

@@ -24,8 +24,8 @@ const Login=()=>{
             console.log(response.data);
             if(response.status==200)
             {
-                 localStorage.setItem("usertype",usertype);
-                 localStorage.setItem("adminemail",useremail);
+                 localStorage.setItem("usertype",response.data.usertype);
+                 localStorage.setItem("adminemail",response.data.useremail);
 
                   message.success("Now! You are loged-In");
                   navigate("/dashboard")
@@ -42,8 +42,12 @@ const Login=()=>{
              console.log(response.data);
              if(response.status==200)
              {
+
+                  localStorage.setItem("patientname",response.data.name)
+                  localStorage.setItem("patientemail",response.data.email)
+
                    message.success("Login SuccessFully");
-                   navigate("/patient")
+                   navigate("/bookappoinment")
              }
           } catch (error) {
             message.error(error.response.data.msg);

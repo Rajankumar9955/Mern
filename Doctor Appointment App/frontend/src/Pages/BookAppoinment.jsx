@@ -5,8 +5,25 @@ import { useEffect, useState } from "react"
 import Table from 'react-bootstrap/Table';
 import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import { message } from "antd";
 const  BookAppoinment=()=>{
     const navigate=useNavigate();
+    const [username, setUserName]=useState("");
+    const [Useremail, setUserEmail]= useState("");
+
+    useEffect(()=>{
+        setUserName(localStorage.getItem("patientname"));
+        setUserEmail(localStorage.getItem("patientemail"));
+    },[])
+
+    const logout=()=>{
+        localStorage.clear();
+        message.success("Your are logged-Out MR : "+username);
+        navigate("/login");
+    }
+
+
+    
     const [data,setData]=useState([]);
 
     const loadData=async()=>{
@@ -41,8 +58,15 @@ const  BookAppoinment=()=>{
         <>
         
         <div style={{height:"510px"}}>
+        <div align="center" style={{marginTop:"15px"}}>
+            <h3>Welcome : {username}</h3>
+            <h4>Email : {Useremail}</h4>
+            <Button variant="danger" onClick={logout} >Log-Out</Button>
+        </div>
+
             <div>
-                <h1 align="center" style={{marginTop:"10px"}}>Available Doctors</h1>
+                <h1 align="center" style={{marginTop:"10px"}}>Available Doctors</h1>                
+
             <Table striped bordered hover>
       <thead>
         <tr>
