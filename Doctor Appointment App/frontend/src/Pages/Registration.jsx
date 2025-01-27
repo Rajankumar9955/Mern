@@ -9,8 +9,7 @@ import {message} from "antd"
 const Registration=()=>{
     const [input,setInput]=useState({})
 
-    
-    const handleInput=(e)=>{
+        const handleInput=(e)=>{
         const name=e.target.name;
         const value=e.target.value;
         setInput(values=>({...values, [name]:value}));
@@ -18,7 +17,7 @@ const Registration=()=>{
     }
 
     const handleSubmit=()=>{
-        let api="http://localhost:8000/doctors/registration";
+        let api="http://localhost:8000/patient/patientRegistration";
         axios.post(api,input).then((res)=>{
             console.log(input);
             message.success("Your Registration Has Been Done!!")

@@ -7,7 +7,7 @@ import { Link,Outlet } from 'react-router-dom';
 const Dashboard=()=>{
     return(
         <>
-            <h1 align="center" style={{marginTop:"15px"}}>Welcome Doctor</h1>
+            <h1 align="center" style={{marginTop:"15px"}}>Welcome Admin</h1>
             <Container fluid>
                 <Row>
                        <Col md="4">

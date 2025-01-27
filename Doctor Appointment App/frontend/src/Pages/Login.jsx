@@ -16,7 +16,7 @@ const Login=()=>{
    
 
     const handleSubmit= async()=>{
-        if(usertype=='Doctor')
+        if(usertype=='Admin')
         {
           try {
             let api="http://localhost:8000/admin/adminlogin";
@@ -37,10 +37,15 @@ const Login=()=>{
              let api="http://localhost:8000/patient/patientlogin";
              const response=await axios.post(api,{useremail:useremail, password:password});
              console.log(response.data);
+             if(response.data==200)
+             {
+                   message.success("Login SuccessFully");
+             }
           } catch (error) {
-            message.error(error);
+            message.error(error.response.data.msg);
           }
         }
+        
     }
 
     return(
@@ -56,10 +61,11 @@ const Login=()=>{
         <Form.Control type="password" placeholder="name@example.com"  name='password' value={password}  onChange={(e)=>{setPassword(e.target.value)}} />
       </FloatingLabel>
       
-      <Form.Select aria-label="Default select example" id='options'className="mb-2" name='usertype'  value={usertype}  onChange={(e)=>{setUserType(e.target.value)}}>
+      <Form.Select aria-label="Default select example" id='options'className="mb-2" name='usertype'   onChange={(e)=>{setUserType(e.target.value)}}>
                                   <option>Select Option</option>
-                                  <option >Doctor</option>
-                                  <option >Patient</option>
+                                  <option value="Admin">Admin</option>
+                                  <option value="Doctor">Doctor</option>
+                                  <option value="Patient">Patient</option>
                                  </Form.Select>
       
       <Button variant="success" onClick={handleSubmit}>Login</Button>
