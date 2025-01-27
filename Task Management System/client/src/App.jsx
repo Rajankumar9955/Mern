@@ -7,6 +7,7 @@ import UserCreate from "./Pages/CreateUser"
 import Login from "./Pages/Login"
 import Users from "./Pages/Users"
 import AssignTask from "./Pages/AssignTask"
+import TaskStatus from "./Pages/TaskStatus"
 
 
 
@@ -23,6 +24,7 @@ const App=()=>{
                                  <Route path="dashboard" element={<Dashboard/>}>
                                     <Route path="userscreate" element={<UserCreate/>}/>
                                     <Route path="assigntask" element={<AssignTask/>}/>
+                                    <Route path="taskstatus" element={<TaskStatus/>}/>
                                  </Route>
                             
                           </Route>
