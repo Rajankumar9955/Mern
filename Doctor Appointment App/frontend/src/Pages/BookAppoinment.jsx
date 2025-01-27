@@ -12,8 +12,16 @@ const  BookAppoinment=()=>{
     const [Useremail, setUserEmail]= useState("");
 
     useEffect(()=>{
-        setUserName(localStorage.getItem("patientname"));
-        setUserEmail(localStorage.getItem("patientemail"));
+        if(localStorage.getItem("patientname")==null)
+        {
+            navigate("/login");
+        }
+        else
+        {
+            setUserName(localStorage.getItem("patientname"));
+            setUserEmail(localStorage.getItem("patientemail"));
+        }
+      
     },[])
 
     const logout=()=>{
