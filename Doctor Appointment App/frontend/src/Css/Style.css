@@ -39,9 +39,11 @@
     border-radius: 15px;
 }
 #dashboard1{
-    height: 500px;
-    border: 2px solid black;
-    margin-bottom: 15px;
+    height: 300px;
+    border: 2px solid rgb(218, 140, 140);
+    border-radius: 15px;
+    background-color: azure;
+    margin-top: 40px;
 }
 #dashboard3{
     /* border: 2px solid black; */
@@ -54,4 +56,23 @@
     border-radius: 15px;
     height: 410px;
     background-color: antiquewhite;
+    margin-top: -65px;
+}
+#dashboard2{
+    text-align: center;
+    margin-top: 85px;
+    border: 2px solid black;
+    width: 120px;
+    border-radius: 15px;
+    height: 30px;
+    margin-left: 105px;
+}
+#dashboard21{
+    text-align: center;
+    margin-top: 65px;
+   
+}
+#btn1121{
+    margin-left: 113px;
+    margin-top: 15px;
 }

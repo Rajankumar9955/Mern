@@ -29,16 +29,17 @@ const navigate=useNavigate();
                        <Col md="4">
                                   <div id='dashboard1'>
                                     <div id='dashboard2'>
-                                      <Link to="adddoctor">ADD Doctor</Link>
+                                      <Link to="adddoctor" >ADD Doctor</Link>
                                     </div>
-                                   
+                                    <Button variant="warning" onClick={logout} id='btn1121'>Log-Out</Button>
+
                                   </div>
                        </Col>
 
 
 
                        <Col md="8">
-                                    <div id='dashboard2'>
+                                    <div id='dashboard21'>
                                         <div id='dashboard3'>
                                                 <Outlet/>
                                         </div>
