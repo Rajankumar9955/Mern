@@ -71,11 +71,18 @@ const TaskStatus=async(req,res)=>{
     const data=await TaskModels.find().populate('empid')
     res.send(data);
 }
-
+const TaskShow=async(req,res)=>{
+    const {email}=req.body;
+    const user=await UserModels.findOne({email:email});
+    console.log(user)
+    res.send(user);
+   
+}
 module.exports={
     Usercreate,
     UserLogin,
     UserDataDisplay,
     AssignTask,
-    TaskStatus
+    TaskStatus,
+    TaskShow
 }

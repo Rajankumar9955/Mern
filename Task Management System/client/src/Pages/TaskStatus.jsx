@@ -27,15 +27,15 @@ const TaskStatus=()=>{
                 <td>{key.empid.name}</td>
                 <td>{key.empid.email}</td>
                 <td>{key.empid.designation}</td>
-
-               <div >
+{/* --------------------------- This is Task Details inside the table------------- */}
+               
                <details>
                <summary>Task Details</summary>
 
         <Table striped bordered hover size="sm">
            <thead>
                     <tr>
-                        <th>Task title</th>
+                        <th>Tasktitle</th>
                         <th>Completiondays</th>
                         <th>Description</th>
                     </tr>
@@ -49,7 +49,8 @@ const TaskStatus=()=>{
         </tbody>
                 </Table>
                </details>
-               </div>
+        {/* --------------------------------------- */}
+               
                <td>sdfsdfsaf</td>
              
             </tr>
