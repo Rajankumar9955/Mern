@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Table from 'react-bootstrap/Table';
-
+import Button from 'react-bootstrap/Button';
 const TaskStatus=()=>{
     const [Data,setData]=useState([]);
 
@@ -28,12 +28,29 @@ const TaskStatus=()=>{
                 <td>{key.empid.email}</td>
                 <td>{key.empid.designation}</td>
 
-                <td>{key.tasktitle}</td>
-                <td>{key.completiondays}</td>
-               <div id="descript">
-                 <td style={{width:"5000px"}}>{key.taskdescription}</td>
+               <div >
+               <details>
+               <summary>Task Details</summary>
+
+        <Table striped bordered hover size="sm">
+           <thead>
+                    <tr>
+                        <th>Task title</th>
+                        <th>Completiondays</th>
+                        <th>Description</th>
+                    </tr>
+         </thead>
+         <tbody>
+                    <tr>
+                    <td>{key.tasktitle}</td>
+                    <td>{key.completiondays}</td>
+                    <td>{key.taskdescription}</td>
+                    </tr>
+        </tbody>
+                </Table>
+               </details>
                </div>
-               <td>sdf</td>
+               <td>sdfsdfsaf</td>
              
             </tr>
             </>
@@ -49,9 +66,7 @@ const TaskStatus=()=>{
           <th>Name</th>
           <th>Email</th>
           <th>Designation</th>
-          <th>Task Title</th>
-          <th>Completion Days</th>
-          <th style={{width:"5000px"}}>Task Description</th>
+          <th>Task Details</th>
           <th>Task Status</th>
         </tr>
         {ans}
