@@ -30,14 +30,14 @@ const Users=()=>{
         }
     },[])
    
-    const [data,setdata]=useState("");
+    const [Data,setdata]=useState({});
 
     const loadData=async()=>{
        let api="http://localhost:8080/users/taskShow";
        try {
          const response=await axios.post(api, {email:localStorage.getItem("useremail")})
          setdata(response.data);
-         console.log(response.data);
+        //  console.log(response.data);
        } catch (error) {
          console.log(error)
        }
@@ -69,7 +69,6 @@ const Users=()=>{
                                             <h6>Email : {useremail}</h6>
                                             <h6>Your Designation : {designation}</h6>
                                             <Button variant="warning" onClick={logout}>Log-out</Button>
-                                            {data}
                                             </div>
                                         </div>
                                         
@@ -79,17 +78,23 @@ const Users=()=>{
               <Col>
                             <div id='usersection11' >
                                 <h4 align="center"style={{marginTop:"10px",marginBottom:"10px"}}>Your Task</h4>  
-                                <Table striped bordered hover variant="light"  style={{width:"100%"}}>
-                                  <thead>
-                                    <tr>
-                                        <th>Task Title</th>
-                                        <th>Completion Days</th>
-                                        <th>Task Description</th>
-                                        <th></th>
-                                    </tr>
-                                  
-                                  </thead>
-                                </Table>   
+                                <Table striped bordered hover size="sm">
+                                     <thead>
+                                       <tr>  
+                                         <th>Task Title</th>
+                                         <th>Description</th>
+                                         <th>Completion Days</th>
+                                       </tr>
+                                     </thead>
+                                     <tbody>
+                                       <tr>
+                                         <td>{Data.tasktitle}</td>
+                                         <td>{Data.taskdescription}</td>
+                                         <td>{Data.completiondays}</td>
+                                       </tr>
+                                    </tbody>
+                                </Table>
+    
                             </div>
               </Col>
             </Row>

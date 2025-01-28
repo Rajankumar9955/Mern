@@ -74,8 +74,8 @@ const TaskStatus=async(req,res)=>{
 const TaskShow=async(req,res)=>{
     const {email}=req.body;
     const user=await UserModels.findOne({email:email});
-    console.log(user)
-    res.send(user);
+    const data=await TaskModels.findOne({empid:user._id})
+    res.send(data);
    
 }
 module.exports={
