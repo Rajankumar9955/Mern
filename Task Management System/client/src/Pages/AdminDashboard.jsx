@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { message } from 'antd';
-const Dashboard=()=>{
+const AdminDashboard=()=>{
     
     const navigate=useNavigate()
     const [user,setUser]=useState("");
@@ -62,4 +62,4 @@ const Dashboard=()=>{
         </>
     )
 }
-export default Dashboard;
+export default AdminDashboard;

@@ -2,7 +2,6 @@
 
 import { BrowserRouter,Routes,Route } from "react-router-dom"
 import Layout from "./Layout"
-import Dashboard from "./Pages/Dashboard"
 import UserCreate from "./Pages/CreateUser"
 import Login from "./Pages/Login"
 
@@ -11,6 +10,7 @@ import TaskStatus from "./Pages/TaskStatus"
 import EmployeeDashboard from "./Pages/EmployeeDashboard"
 import TaskShow from "./Pages/TaskShow"
 import EmpProfile from "./Pages/EmpProfile"
+import AdminDashboard from "./Pages/AdminDashboard"
 
 
 
@@ -24,7 +24,7 @@ const App=()=>{
                             <Route path="login" element={<Login/>}/>                            
                     
 
-                                 <Route path="dashboard" element={<Dashboard/>}>
+                                 <Route path="admindashboard" element={<AdminDashboard/>}>
                                     <Route path="userscreate" element={<UserCreate/>}/>
                                     <Route path="assigntask" element={<AssignTask/>}/>
                                     <Route path="taskstatus" element={<TaskStatus/>}/>

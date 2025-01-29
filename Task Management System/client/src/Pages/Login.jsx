@@ -30,7 +30,7 @@ const Login=()=>{
                       localStorage.setItem("usertype", response.data.usertype);
                       //   ----------------------------------------login end
                         message.success("Login SuccessFully");
-                        navigate("/dashboard");
+                        navigate("/admindashboard");
                   }
                 } catch (error) {
                      message.error(error.response.data.msg);

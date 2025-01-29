@@ -3,10 +3,20 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link, Outlet} from 'react-router-dom';
+import { Link, Outlet, useNavigate} from 'react-router-dom';
+import { useEffect } from 'react';
+
 const EmployeeDashboard=()=>{
+
+const navigate=useNavigate()
+
+  useEffect(()=>{
+              if(localStorage.getItem("username")==null)
+              {
+                navigate("/login")
+              }
+  },[])
      
-    
     return(
         <>
           <h2 align="center" style={{fontFamily:"cursive"}}>USER DASHBOARD</h2>
@@ -21,9 +31,6 @@ const EmployeeDashboard=()=>{
                               </div>
                               <div id='usercreat'>
                                <Link to="taskshow" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Task Show</Link>
-                              </div>
-                              <div id='usercreat'>
-                               <Link to="taskstatus" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Task Status</Link>
                               </div>
                         </div>  
               </div>    
