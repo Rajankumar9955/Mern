@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import axios from "axios"
 import {message} from "antd"
 import { useNavigate } from 'react-router-dom';
-import LocaleProvider from 'antd/es/locale';
+
 
 const Login=()=>{
     const navigate=useNavigate();
@@ -51,7 +51,7 @@ const Login=()=>{
 
                     //   ----------------------------------------login end
                        message.success("Login SuccessFully");
-                       navigate("/users")
+                       navigate("/empdashboard")
                   }
                } catch (error) {
                         message.error(error.response.data.msg);

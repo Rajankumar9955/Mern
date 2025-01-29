@@ -5,9 +5,12 @@ import Layout from "./Layout"
 import Dashboard from "./Pages/Dashboard"
 import UserCreate from "./Pages/CreateUser"
 import Login from "./Pages/Login"
-import Users from "./Pages/Users"
+
 import AssignTask from "./Pages/AssignTask"
 import TaskStatus from "./Pages/TaskStatus"
+import EmployeeDashboard from "./Pages/EmployeeDashboard"
+import TaskShow from "./Pages/TaskShow"
+import EmpProfile from "./Pages/EmpProfile"
 
 
 
@@ -19,12 +22,17 @@ const App=()=>{
                           <Route path="/" element={<Layout/>}>
                             <Route index element={<Login/>}/>
                             <Route path="login" element={<Login/>}/>                            
-                            <Route path="users" element={<Users/>}/>   
+                    
 
                                  <Route path="dashboard" element={<Dashboard/>}>
                                     <Route path="userscreate" element={<UserCreate/>}/>
                                     <Route path="assigntask" element={<AssignTask/>}/>
                                     <Route path="taskstatus" element={<TaskStatus/>}/>
+                                 </Route>
+
+                                 <Route path="empdashboard" element={<EmployeeDashboard/>}>
+                                          <Route path="empprofile" element={<EmpProfile/>}/>
+                                          <Route path="taskshow" element={<TaskShow/>}/>
                                  </Route>
                             
                           </Route>

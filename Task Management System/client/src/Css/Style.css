@@ -76,6 +76,16 @@
     background-color:#95b0ea;
     color: white;
 }
+#usercreat{
+    height: 35px;
+    width:130px;
+    border: 2px solid black;
+    margin-top: 25px;
+    border-radius: 15px;
+    background-color:#95b0ea;
+    color: white;
+    padding-top: 5px;
+}
 #usercreate:hover{
         background-color: beige;
         color: rgb(169, 111, 111);
@@ -110,7 +120,7 @@
 }
 #usersection3{
     /* border: 2px solid black; */
-    width: 90%;
+    width:400px;
     height: 400px;
     /* margin-top: 15px; */
     border-radius: 15px;
