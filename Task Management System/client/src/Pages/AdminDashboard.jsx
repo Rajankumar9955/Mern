@@ -30,7 +30,7 @@ const AdminDashboard=()=>{
 
     return(
         <>
-         <h2 align="center" style={{fontFamily:"cursive"}}>ADMIN DASHBOARD</h2>
+         <h4 align="center" style={{fontFamily:"cursive"}}>ADMIN DASHBOARD</h4>
         <div style={{marginTop:"20px"}}>
     <Container fluid>
             <Row>
@@ -39,13 +39,16 @@ const AdminDashboard=()=>{
                         <div id='usercreatesecond' align="center" >
                             <h4 style={{marginTop:"20px"}}>Welcome : {user}</h4>
                               <div id='usercreate'>
-                               <Link to="userscreate" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >New <br />Create</Link>
+                               <Link to="userscreate" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >New Create</Link>
                               </div>
                               <div id='usercreate1'>
-                               <Link to="assigntask" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Assign <br />Task</Link>
+                               <Link to="assigntask" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Assign Task</Link>
                               </div>
                               <div id='usercreate1'>
-                               <Link to="taskstatus" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Task<br />Status</Link>
+                               <Link to="taskstatus" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Task Status</Link>
+                              </div>
+                              <div id='usercreate1'>
+                               <Link to="adminprofile" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Profile</Link>
                               </div>
                               <Button variant="warning"  style={{marginTop:"20px"}} onClick={logoutadmin}>Log-Out</Button>
                         </div>

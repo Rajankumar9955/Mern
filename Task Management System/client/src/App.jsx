@@ -12,6 +12,7 @@ import TaskShow from "./Pages/TaskShow"
 import EmpProfile from "./Pages/EmpProfile"
 import AdminDashboard from "./Pages/AdminDashboard"
 import ResetEmployeePass from "./Pages/ResetEmployeePass"
+import AdminProfile from "./Pages/AdminProfile"
 
 
 
@@ -26,12 +27,15 @@ const App=()=>{
                     
 
                                  <Route path="admindashboard" element={<AdminDashboard/>}>
+                                    <Route index element={<AdminProfile/>}/>
+                                    <Route path="adminprofile" element={<AdminProfile/>}/>
                                     <Route path="userscreate" element={<UserCreate/>}/>
                                     <Route path="assigntask" element={<AssignTask/>}/>
                                     <Route path="taskstatus" element={<TaskStatus/>}/>
                                  </Route>
 
                                  <Route path="empdashboard" element={<EmployeeDashboard/>}>
+                                          <Route index element={<EmpProfile/>}/>
                                           <Route path="empprofile" element={<EmpProfile/>}/>
                                           <Route path="taskshow" element={<TaskShow/>}/>
                                           <Route path="resetemppass" element={<ResetEmployeePass/>}/>

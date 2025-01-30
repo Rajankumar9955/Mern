@@ -68,11 +68,12 @@
     height: 40px;
 }
 #usercreate{
-    height: 55px;
-    width:130px;
+    height: 35px;
+    width:178px;
     border: 2px solid black;
     margin-top: 25px;
     border-radius: 15px;
+    padding-top: 5px;
     background-color:#95b0ea;
     color: white;
 }
@@ -135,10 +136,11 @@
     text-align: center;
 }
 #usercreate1{
-    height: 55px;
-    width:130px;
+    height: 35px;
+    width:178px;
     border: 2px solid black;
     margin-top: 15px;
+    padding-top: 5px;
     border-radius: 15px;
     background-color:#95b0ea;
     color: white;

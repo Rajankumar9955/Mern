@@ -86,7 +86,7 @@ const TaskSubmitByEmployee=async(req,res)=>{
    const {taskid,taskStatus}=req.body;
     try {
         const Task=await TaskModels.findByIdAndUpdate(taskid,{taskstatus:taskStatus,report:"Submitted"})
-        res.status(200).send("Task SuccessFully Submmited");
+        res.status(200).send("Task SuccessFully Submitted");
     } catch (error) {
         console.log(error)
     }

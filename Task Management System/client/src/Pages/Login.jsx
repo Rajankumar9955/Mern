@@ -28,6 +28,7 @@ const Login=()=>{
                   {
                       // ----------------------------------------login start --
                       localStorage.setItem("usertype", response.data.usertype);
+                      localStorage.setItem("adminemail", response.data.email);
                       //   ----------------------------------------login end
                         message.success("Login SuccessFully");
                         navigate("/admindashboard");

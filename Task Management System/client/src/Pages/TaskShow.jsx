@@ -67,7 +67,7 @@ const TaskShow=()=>{
                              <Form.Select size="sm" name="taskStatus" value={taskStatus} onChange={(e)=>{setTaskStatus(e.target.value)}}>
                              <option>Select</option>
                              <option value="Fully Completed">Fully Completed</option>
-                             <option value="Partial Completed">Partially Completed</option>
+                             <option value="Partially Completed">Partially Completed</option>
                              <option value="Not Completed">Not Completed</option>
                              </Form.Select>
                     </td>
