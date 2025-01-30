@@ -107,13 +107,13 @@
 }
 #usersection11{
     border: 2px solid black;
-    height: 400px;
+    height: 430px;
     border-radius: 15px;
     /* overflow-y: hidden; */
 }
 #usersection1{
     /* border: 2px solid black; */
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 #usersection2{
     /* border: 2px solid black; */
@@ -131,7 +131,8 @@
 }
 #usersection4{
     margin-top: 105px;
-    margin-left: 35px;
+    margin-left: 55px;
+    text-align: center;
 }
 #usercreate1{
     height: 55px;
@@ -221,9 +222,10 @@
     margin-bottom: 15px;
 }
 #outlett{
- border:2px solid black;
+ /* border:2px solid black; */
  height: 430px;
- overflow-x: scroll;
+ overflow-y: scroll;
+ border-radius: 15px;
 
- background-image: url("../Images/coding1.jpeg");
+ /* background-image: url("../Images/coding1.jpeg"); */
 }

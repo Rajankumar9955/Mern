@@ -3,26 +3,40 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 import { Link, Outlet, useNavigate} from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import img from "../Images/Coding.Avif"
+import { message } from 'antd';
 const EmployeeDashboard=()=>{
 
 const navigate=useNavigate()
+const [username,setUserName]=useState("");
 
   useEffect(()=>{
               if(localStorage.getItem("username")==null)
               {
                 navigate("/login")
               }
+              else
+              {
+                setUserName(localStorage.getItem("username"))
+              }
   },[])
-     
+    
+  
+  const logoutuser=()=>{
+    localStorage.clear();
+    message.success("You are Loged-out : "+ username);
+    navigate("/login")
+}
+
     return(
         <>
           <h4 align="center" style={{fontFamily:"cursive"}}>EMPLOYEE DASHBOARD</h4>
          <div style={{marginTop:"20px"}}>
     <Container fluid>
-            <Row>
+            <Row id='imgrow'>
               <Col md="5" >
               <div id='bgpic1'>
               <div id='usercreatemain11' align="center">
@@ -37,8 +51,11 @@ const navigate=useNavigate()
                                <Link to="taskshow" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Task Show</Link>
                               </div>
                               <div id='usercreat'>
-                               <Link to="taskshow" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Task Show</Link>
+                               <Link to="emppassreset" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Reset Password</Link>
                               </div>
+
+                              <Button variant="warning"  style={{marginTop:"20px"}} onClick={logoutuser}>Log-Out</Button>
+
                         </div>  
               </div>    
               

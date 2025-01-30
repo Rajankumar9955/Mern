@@ -5,6 +5,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import { message } from "antd";
 
 const AssignTask=()=>{
     const [data,setData]=useState([]);
@@ -31,7 +32,7 @@ const AssignTask=()=>{
         try {
             let api="http://localhost:8080/users/assigntask";
             const response= axios.post(api,{empid:empId, ...input});
-             message.success("User Created!!");
+             message.success("Task Assigned");
         } catch (error) {
             console.log(error);
         }
@@ -45,7 +46,7 @@ const AssignTask=()=>{
             const response=await axios.get(api);
             setData(response.data);
             console.log(data);
-;        } catch (error) {
+      } catch (error) {
             console.log(error)
         }
     }
