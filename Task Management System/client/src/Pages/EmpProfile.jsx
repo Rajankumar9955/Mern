@@ -31,9 +31,9 @@ const EmpProfile=()=>{
     return(
         <>
          <div id='usersection1'>
-                                   <div id='usersection2' align="center">
-                                        <div id='usersection3'>
-                                            <div id='usersection4' align="center">
+                                   <div id='usersection2' align="center" style={{marginTop:"15px"}}>
+                                        <div id='usersection3' >
+                                            <div id='usersection4' align="center" >
                                             <h3>Welcome :  {username}</h3>
                                             <h6>Email : {useremail}</h6>
                                             <h6>Your Designation : {designation}</h6>
