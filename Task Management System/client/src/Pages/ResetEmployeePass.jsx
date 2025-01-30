@@ -23,13 +23,12 @@ const ResetEmployeePass=()=>{
             try {
                 let api="http://localhost:8080/users/resetemppass";
                 const response=await axios.post(api,{oldpassword:oldpassword, newpassword:newpassword,userid:userid});
-                message.success("Password SuccessFully Changed!");
-                console.log(response.data);
+                message.success(response.data);
             } catch (error) {
                 console.log(error)
             }            
         }else{
-            message.error("Your New Password and OldPassword Does'nt Match ")
+            message.error("New Password and OldPassword Does'nt Match")
         }
        
         
@@ -42,7 +41,7 @@ const ResetEmployeePass=()=>{
                <div id='firstdiv1' align="center">
                   <div id='seconddiv' align="center">
                               <div id='modelss'>       
-                                 <FloatingLabel id='formsss' style={{marginTop:"20px"}}
+                                 <FloatingLabel id='formsss' style={{marginTop:"40px"}}
                                  controlId="floatingInput" label="Old Password" className="mb-1">
                                  <Form.Control type="password" placeholder="name@example.com"  name='oldpassword' value={oldpassword}  onChange={(e)=>{setOldPassword(e.target.value)}}/>
                                  </FloatingLabel>
@@ -57,7 +56,6 @@ const ResetEmployeePass=()=>{
                                 
                                  <Button variant="success" id='btn' onClick={handleSubmit}>Now Change</Button>
                                 
-                                {userid}
                               </div>
                   </div>
                </div>

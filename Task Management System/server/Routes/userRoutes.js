@@ -12,6 +12,6 @@ route.get("/taskstatus", userControllers.TaskStatus);
 route.post("/taskShow", userControllers.TaskShow);
 route.post("/tasksubmit", userControllers.TaskSubmitByEmployee);
 
-// route.post("/resetemppass", userControllers.ResetEmployeePassword);
+route.post("/resetemppass", userControllers.ResetEmployeePassword);
 
 module.exports=route;
