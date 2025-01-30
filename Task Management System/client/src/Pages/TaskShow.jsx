@@ -5,15 +5,22 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+
+import Form from 'react-bootstrap/Form';
 
 const TaskShow=()=>{
-    
+    const empid=localStorage.getItem("userid");
+
+    const [taskStatus,setTaskStatus]=useState("")
+
+
      const [Data,setdata]=useState([]);
     
         const loadData=async()=>{
            let api="http://localhost:8080/users/taskShow";
            try {
-             const response=await axios.post(api, {email:localStorage.getItem("useremail")})
+             const response=await axios.post(api, {empid:empid})
              setdata(response.data);
              console.log(response.data);
            } catch (error) {
@@ -21,10 +28,22 @@ const TaskShow=()=>{
            }
         }
         useEffect(()=>{
-
             loadData()
+         },[])
 
-    },[])
+
+
+         const handleSubmit=async(taskid)=>{
+          try {
+            let api="http://localhost:8080/users/tasksubmit";
+            const response=await axios.post(api,{taskid:taskid, taskStatus:taskStatus});
+            alert(response.data);
+            loadData();
+          } catch (error) {
+            console.log(error);
+          }
+         }
+
      let sno=0;
     const ans=Data.map((key)=>{
       sno++
@@ -34,12 +53,27 @@ const TaskShow=()=>{
                     <td>{sno}</td>
                     <td>{key.tasktitle}</td>
                     <td>
+
                     <details>
                     <summary>Description</summary>
                     <td>{key.taskdescription}</td>
                     </details>
                     </td>
+
                     <td>{key.completiondays}</td>
+
+                    <td>
+                             <Form.Select size="sm" name="taskStatus" value={taskStatus} onChange={(e)=>{setTaskStatus(e.target.value)}}>
+                             <option>Select</option>
+                             <option value="Fully Completed">Select</option>
+                             <option value="Patial Completed">Select</option>
+                             <option value="Not Completed">Select</option>
+                             </Form.Select>
+                    </td>
+
+                    <td>
+                    <Button variant="success" id='btn' onClick={()=>{handleSubmit(key._id)}}>Assign</Button>
+                    </td>
                    </tr>
         </>
       )
@@ -56,7 +90,9 @@ const TaskShow=()=>{
           <td>Sno</td>
           <th>Task Title</th>
           <th>Description</th>
-          <th>Completion Days</th>
+          <th>Total Days</th>
+          <th>Status</th>
+          <th>Send Report</th>
         </tr>
         {ans}
       </thead>

@@ -73,23 +73,39 @@ const TaskStatus=async(req,res)=>{
     res.send(data);
 }
 const TaskShow=async(req,res)=>{
-    const {email}=req.body;
-    const user=await UserModels.findOne({email:email});
-    const data=await TaskModels.find({empid:user._id})
-    res.send(data);
+    const {empid}=req.body;
+    try {
+       const Task=await TaskModels.find({empid:empid})
+        res.status(200).send(Task)
+    } catch (error) {
+        
+    }
    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 const ResetEmployeePassword=async(req,res)=>{
     const {userid,oldpassword,newpassword}=req.body;
     const data=await UserModels.findById(userid);
     console.log(pass);
-    const checkpass=await UserModels.findOne({password:data.oldpassword})
+    const checkpass=await UserModels.find({password:data.oldpassword})
     console.log(checkpass)
     try {
         if(checkpass)
         {
              await UserModels.findByIdAndUpdate(userid,{password:newpassword})
-             res.status(200).send({msd:"Password Change SuccessFully"});
+             res.status(200).send({msg:"Password Change SuccessFully"});
         }
         else
         {
