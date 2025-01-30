@@ -1,8 +1,10 @@
+import { message, Spin } from "antd";
 import { useEffect, useState } from "react"
 import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
 
 const AdminProfile=()=>{
+    const [isVisible,setisVisible]=useState(true)
     const navigate=useNavigate();
     const [usertype,setusertype]=useState("")
     const [adminemail,setadminemail]=useState("");
@@ -19,13 +21,26 @@ const AdminProfile=()=>{
         }
         
     },[])
+
+    useEffect(()=>{
+        setTimeout(() => {
+            setisVisible(false)
+        }, 1500);
+        setisVisible(true)
+    },[])
     const logoutadmin=()=>{
         localStorage.clear();
        navigate("/login")
+       message.error(usertype+" You Are Logged-out")
     }
     return(
         <>
-          <div id='usersection1'>
+        {isVisible?(
+            <div align="center" style={{marginTop:"100px"}}>
+            <Spin tip="Loading" size="large"></Spin>
+        </div>
+        ):(
+            <div id='usersection1'>
                                    <div id='usersection2' align="center" style={{marginTop:"15px"}}>
                                         <div id='usersection3' >
                                             <div id='usersection4' align="center" >
@@ -42,6 +57,8 @@ const AdminProfile=()=>{
                                         </div>
                                    </div>
                             </div>
+        )}
+          
         </>
     )
 }

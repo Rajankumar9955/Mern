@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { message } from 'antd';
 const AdminDashboard=()=>{
-    
+    const [isVisible,setisVisible]=useState(true)
     const navigate=useNavigate()
     const [user,setUser]=useState("");
 
@@ -27,7 +27,8 @@ const AdminDashboard=()=>{
         message.success("You are Loged-out : "+ user);
         navigate("/login")
     }
-
+   
+   
     return(
         <>
          <h4 align="center" style={{fontFamily:"cursive"}}>ADMIN DASHBOARD</h4>
