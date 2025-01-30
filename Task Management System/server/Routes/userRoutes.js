@@ -10,6 +10,8 @@ route.get("/userdisplay", userControllers.UserDataDisplay);
 route.post("/assigntask", userControllers.AssignTask);
 route.get("/taskstatus", userControllers.TaskStatus);
 route.post("/taskShow", userControllers.TaskShow);
-route.post("/resetemppass", userControllers.ResetEmployeePassword);
+route.post("/tasksubmit", userControllers.TaskSubmitByEmployee);
+
+// route.post("/resetemppass", userControllers.ResetEmployeePassword);
 
 module.exports=route;

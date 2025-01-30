@@ -65,14 +65,14 @@ const TaskShow=()=>{
                     <td>
                              <Form.Select size="sm" name="taskStatus" value={taskStatus} onChange={(e)=>{setTaskStatus(e.target.value)}}>
                              <option>Select</option>
-                             <option value="Fully Completed">Select</option>
-                             <option value="Patial Completed">Select</option>
-                             <option value="Not Completed">Select</option>
+                             <option value="Fully Completed">Fully Completed</option>
+                             <option value="Partial Completed">Partially Completed</option>
+                             <option value="Not Completed">Not Completed</option>
                              </Form.Select>
                     </td>
 
                     <td>
-                    <Button variant="success" id='btn' onClick={()=>{handleSubmit(key._id)}}>Assign</Button>
+          {key.report=="Submitted"?(<Button disabled>Submitted</Button>):(  <Button  id='btn' onClick={()=>{handleSubmit(key._id)}}>Assign</Button>)}        
                     </td>
                    </tr>
         </>
