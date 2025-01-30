@@ -33,7 +33,12 @@ const TaskShow=()=>{
                    <tr>
                     <td>{sno}</td>
                     <td>{key.tasktitle}</td>
+                    <td>
+                    <details>
+                    <summary>Description</summary>
                     <td>{key.taskdescription}</td>
+                    </details>
+                    </td>
                     <td>{key.completiondays}</td>
                    </tr>
         </>

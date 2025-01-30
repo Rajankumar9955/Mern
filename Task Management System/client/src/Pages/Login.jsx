@@ -22,7 +22,7 @@ const Login=()=>{
            if(usertype=='ADMIN'){
                 try {
                     let api="http://localhost:8080/admin/adminlogin";
-                     let response=await axios.post(api,{email:email,password:password,usertype:usertype});
+                     let response=await axios.post(api,{email:email,password:password});
                      console.log(response.data)
                   if(response.status==200)
                   {
@@ -48,6 +48,7 @@ const Login=()=>{
                       localStorage.setItem("username", response.data.name);
                       localStorage.setItem("useremail", response.data.email);
                       localStorage.setItem("designation", response.data.designation);
+                      localStorage.setItem("userid", response.data._id);
 
                     //   ----------------------------------------login end
                        message.success("Login SuccessFully");

@@ -11,7 +11,7 @@ import EmployeeDashboard from "./Pages/EmployeeDashboard"
 import TaskShow from "./Pages/TaskShow"
 import EmpProfile from "./Pages/EmpProfile"
 import AdminDashboard from "./Pages/AdminDashboard"
-import EmployeePassReset from "./Pages/EmployeePassReset"
+import ResetEmployeePass from "./Pages/ResetEmployeePass"
 
 
 
@@ -34,7 +34,7 @@ const App=()=>{
                                  <Route path="empdashboard" element={<EmployeeDashboard/>}>
                                           <Route path="empprofile" element={<EmpProfile/>}/>
                                           <Route path="taskshow" element={<TaskShow/>}/>
-                                          <Route path="emppassreset" element={<EmployeePassReset/>}/>
+                                          <Route path="resetemppass" element={<ResetEmployeePass/>}/>
                                  </Route>
                             
                           </Route>

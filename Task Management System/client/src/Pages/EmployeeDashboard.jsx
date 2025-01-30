@@ -36,7 +36,7 @@ const [username,setUserName]=useState("");
           <h4 align="center" style={{fontFamily:"cursive"}}>EMPLOYEE DASHBOARD</h4>
          <div style={{marginTop:"20px"}}>
     <Container fluid>
-            <Row id='imgrow'>
+            <Row >
               <Col md="5" >
               <div id='bgpic1'>
               <div id='usercreatemain11' align="center">
@@ -51,7 +51,7 @@ const [username,setUserName]=useState("");
                                <Link to="taskshow" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Task Show</Link>
                               </div>
                               <div id='usercreat'>
-                               <Link to="emppassreset" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Reset Password</Link>
+                               <Link to="resetemppass" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Reset Password</Link>
                               </div>
 
                               <Button variant="warning"  style={{marginTop:"20px"}} onClick={logoutuser}>Log-Out</Button>

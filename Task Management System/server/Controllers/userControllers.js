@@ -7,6 +7,7 @@ const RandomPass=require("../MiddleWare/RandomPass")
 
 const TaskModels=require("../Models/taskModels");
 
+
 const Usercreate=async(req,res)=>{
     const {name,email,designation}=req.body;
     const MyPass=RandomPass();
@@ -78,11 +79,32 @@ const TaskShow=async(req,res)=>{
     res.send(data);
    
 }
+const ResetEmployeePassword=async(req,res)=>{
+    const {userid,oldpassword,newpassword}=req.body;
+    const data=await UserModels.findById(userid);
+    console.log(pass);
+    const checkpass=await UserModels.findOne({password:data.oldpassword})
+    console.log(checkpass)
+    try {
+        if(checkpass)
+        {
+             await UserModels.findByIdAndUpdate(userid,{password:newpassword})
+             res.status(200).send({msd:"Password Change SuccessFully"});
+        }
+        else
+        {
+            res.status(400).send({msg:"Old Password Doesn't Match"});
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
 module.exports={
     Usercreate,
     UserLogin,
     UserDataDisplay,
     AssignTask,
     TaskStatus,
-    TaskShow
+    TaskShow,
+    ResetEmployeePassword
 }

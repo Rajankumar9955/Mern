@@ -9,6 +9,7 @@ const EmpProfile=()=>{
         const [username,setUserName]=useState("");
         const [useremail,setUserEmail]=useState("");
         const [designation,setDesignation]=useState("");
+        
     
         useEffect(()=>{
             if(localStorage.getItem("username")==null)
@@ -29,7 +30,7 @@ const EmpProfile=()=>{
             navigate("/login")
         }
         const Resetpas=()=>{
-            navigate("/empdashboard/emppassreset")
+            navigate("/empdashboard/resetemppass")
         }
     return(
         <>
