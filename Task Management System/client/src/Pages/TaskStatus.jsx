@@ -51,7 +51,7 @@ const TaskStatus=()=>{
                </details>
         {/* --------------------------------------- */}
                
-               <td>sdfsdfsaf</td>
+               <td><Button variant="warning" style={{fontWeight:"bolder"}}>{key.report}</Button></td>
              
             </tr>
             </>

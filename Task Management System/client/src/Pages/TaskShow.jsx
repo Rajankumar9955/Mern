@@ -8,6 +8,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 import Form from 'react-bootstrap/Form';
+import { message } from 'antd';
 
 const TaskShow=()=>{
     const empid=localStorage.getItem("userid");
@@ -37,7 +38,7 @@ const TaskShow=()=>{
           try {
             let api="http://localhost:8080/users/tasksubmit";
             const response=await axios.post(api,{taskid:taskid, taskStatus:taskStatus});
-            alert(response.data);
+            message.success(response.data);
             loadData();
           } catch (error) {
             console.log(error);
