@@ -64,7 +64,13 @@ const TaskStatus=()=>{
                </details>
         {/* --------------------------------------- */}
                 <td>{key.taskstatus}</td>
-               <td><Button variant="warning" style={{fontWeight:"bolder"}}>{key.report}</Button></td>
+               <td>
+                {key.report=="Submitted"?(
+                    <span style={{color:"green",fontWeight:"bold"}}>{key.report}</span>
+                ):(
+                    <span style={{color:"red",fontWeight:"bold"}}>{key.report}</span>
+                )}
+               </td>
              
             </tr>
             </>
