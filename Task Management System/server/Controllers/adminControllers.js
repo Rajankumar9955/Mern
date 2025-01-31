@@ -21,6 +21,11 @@ const AdminLogin=async(req,res)=>{
     usertype:usertype
 }
 
+const ResetAdminPass=async(req,res)=>{
+      console.log(req.body);
+      res.send("ok");
+}
 module.exports={
     AdminLogin,
+    ResetAdminPass
 }

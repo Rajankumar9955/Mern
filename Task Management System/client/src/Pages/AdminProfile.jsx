@@ -33,6 +33,9 @@ const AdminProfile=()=>{
        navigate("/login")
        message.error(usertype+" You Are Logged-out")
     }
+    const ResetPass=()=>{
+        navigate("/admindashboard/resetadminpass")
+    }
     return(
         <>
         {isVisible?(
@@ -44,10 +47,10 @@ const AdminProfile=()=>{
                                    <div id='usersection2' align="center" style={{marginTop:"15px"}}>
                                         <div id='usersection3' >
                                             <div id='usersection4' align="center" >
-                                            <h3 >Welcome :  {usertype}</h3>
-                                            <h6 >Email : {adminemail}</h6>
+                                            <h3 style={{marginLeft:"40px"}}>Welcome :  {usertype}</h3>
+                                            <h6 style={{marginLeft:"40px"}}>Email : {adminemail}</h6>
                                             <Button variant="warning"  style={{marginTop:"20px"}} onClick={logoutadmin}>Log-Out</Button><br />
-                                            <Button variant="secondary"  style={{marginTop:"20px"}} >Reset Password</Button>
+                                            <Button variant="secondary"  style={{marginTop:"20px"}} onClick={ResetPass}>Reset Password</Button>
 
                                              <div>
                                               <div>

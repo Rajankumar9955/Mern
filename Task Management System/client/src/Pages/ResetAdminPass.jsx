@@ -7,22 +7,22 @@ import Button from 'react-bootstrap/Button';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
-const ResetEmployeePass=()=>{
-    const [userid,setUserid]=useState("");
+const ResetAdminPass=()=>{
+    const [Adminid,setAdminId]=useState("");
     const [oldpassword,setOldPassword]=useState("");
     const [newpassword, setNewPassword]=useState("");
     const [connewpassword, setConNewPassword]=useState("");
-    console.log(oldpassword,newpassword,connewpassword)
+    console.log(oldpassword,newpassword,connewpassword);
     
-    useEffect(()=>{
-        setUserid(localStorage.getItem("userid"))
-    },[])
+   useEffect(()=>{
+    setAdminId(localStorage.getItem("adminid"))
+   },[])
   
     const handleSubmit=async()=>{
         if(newpassword==connewpassword){
             try {
-                let api="http://localhost:8080/users/resetemppass";
-                const response=await axios.post(api,{oldpassword:oldpassword, newpassword:newpassword,userid:userid});
+                let api="http://localhost:8080/admin/resetadminpass";
+                const response=await axios.post(api,{oldpassword:oldpassword, newpassword:newpassword,adminid:Adminid});
                 message.success(response.data);
             } catch (error) {
                 console.log(error)
@@ -55,7 +55,7 @@ const ResetEmployeePass=()=>{
                                  </FloatingLabel>
                                 
                                  <Button variant="success" id='btn' onClick={handleSubmit}>Now Change</Button>
-                                
+                              
                               </div>
                   </div>
                </div>
@@ -63,4 +63,4 @@ const ResetEmployeePass=()=>{
         </>
     )
 }
-export default ResetEmployeePass
+export default ResetAdminPass

@@ -13,7 +13,7 @@ const AssignTask=()=>{
     const [input,setInput]=useState({});
     const [empId, setEmpId]=useState("");
 
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     const handleClose = () => setShow(false);
     
     const handleShow = (empid) => {
@@ -33,6 +33,7 @@ const AssignTask=()=>{
             let api="http://localhost:8080/users/assigntask";
             const response= axios.post(api,{empid:empId, ...input});
              message.success("Task Assigned");
+             setShow(false);
         } catch (error) {
             console.log(error);
         }
