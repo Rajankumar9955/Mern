@@ -99,15 +99,20 @@ const TaskSubmitByEmployee=async(req,res)=>{
 const ResetEmployeePassword=async(req,res)=>{
     const {userid,oldpassword,newpassword}=req.body;
     const user=await UserModels.findById(userid);
+
+    if(user.password!=oldpassword){
+           res.status(400).send({msg:"Wrong Old Password"}) 
+    }
      if(user.password==oldpassword)
      {
         try {
             const data=await UserModels.findByIdAndUpdate(userid,{password:newpassword})
-            res.status(200).send("Password Change SuccessFully");
+            res.status(200).send({msg:"Password Change SuccessFully"});
         } catch (error) {
             console.log(error)
         }
      }
+     
 }
 module.exports={
     Usercreate,

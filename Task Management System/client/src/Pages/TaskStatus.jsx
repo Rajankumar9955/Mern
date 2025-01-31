@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import { Spin } from "antd";
+import { message, Spin } from "antd";
 import wrongimg from "../Images/rightimg.jpeg";
 import rightimg from "../Images/wrongimg.jpeg"
 const TaskStatus=()=>{
@@ -29,6 +29,17 @@ const TaskStatus=()=>{
         }, 1500);
         setisVisible(true)
     },[])
+
+     const ReAssign=async(taskid)=>{
+        let api="http://localhost:8080/admin/reassigntask";
+        try {
+            const response=await axios.post(api,{taskid:taskid});
+            message.success(response.data.msg)
+        } catch (error) {
+            console.log(error)
+        }
+     }
+
     let sno=0;
     const ans=Data.map((key)=>{
         sno++;
@@ -71,7 +82,9 @@ const TaskStatus=()=>{
                     <span style={{color:"red",fontWeight:"bold"}}>{key.report}</span>
                 )}
                </td>
-             
+             <td>
+                <Button variant="primary" style={{width:"100px"}} size="sm" onClick={()=>{ReAssign(key._id)}}>Re-Assign</Button>
+             </td>
             </tr>
             </>
         )
@@ -95,6 +108,7 @@ const TaskStatus=()=>{
           <th>Task Details</th>
           <th>Task Status</th>
           <th>Report</th>
+          <th>Re-Assign</th>
         </tr>
         
         </thead>

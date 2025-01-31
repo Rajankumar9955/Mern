@@ -1,6 +1,6 @@
 
 const AdminModels=require("../Models/adminModels")
-
+const TaskModels=require("../Models/taskModels")
 const AdminLogin=async(req,res)=>{
     const {email,password,usertype}=req.body;
     // console.log(req.body);
@@ -21,11 +21,18 @@ const AdminLogin=async(req,res)=>{
     usertype:usertype
 }
 
-const ResetAdminPass=async(req,res)=>{
-      console.log(req.body);
-      res.send("ok");
+
+const ReAssignTask=async(req,res)=>{
+    const {taskid}=req.body;
+    try {
+        const data=await TaskModels.findByIdAndUpdate(taskid,{report:'pending'});
+        res.status(200).send({msg:"Re-Assigned"})
+    } catch (error) {
+        console.log(error);
+    }
+   
 }
 module.exports={
     AdminLogin,
-    ResetAdminPass
+    ReAssignTask
 }

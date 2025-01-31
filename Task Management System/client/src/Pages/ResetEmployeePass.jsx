@@ -23,12 +23,15 @@ const ResetEmployeePass=()=>{
             try {
                 let api="http://localhost:8080/users/resetemppass";
                 const response=await axios.post(api,{oldpassword:oldpassword, newpassword:newpassword,userid:userid});
-                message.success(response.data);
+                if(response.status==200)
+                {
+                    message.success(response.data.msg);
+                }
             } catch (error) {
-                console.log(error)
+                message.error(error.response.data.msg)
             }            
         }else{
-            message.error("New Password and Old Password Does'nt Match")
+            message.error("Does'nt Match New Password and Confirm New Password")
         }
        
         

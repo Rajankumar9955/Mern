@@ -5,6 +5,6 @@ const route=express.Router();
 const adminController=require("../Controllers/adminControllers")
 
 route.post("/adminlogin", adminController.AdminLogin);
-route.post("/resetadminpass", adminController.ResetAdminPass);
+route.post("/reassigntask", adminController.ReAssignTask);
 
 module.exports=route

@@ -13,7 +13,7 @@ import EmpProfile from "./Pages/EmpProfile"
 import AdminDashboard from "./Pages/AdminDashboard"
 import ResetEmployeePass from "./Pages/ResetEmployeePass"
 import AdminProfile from "./Pages/AdminProfile"
-import ResetAdminPass from "./Pages/ResetAdminPass"
+
 
 
 
@@ -33,7 +33,6 @@ const App=()=>{
                                     <Route path="userscreate" element={<UserCreate/>}/>
                                     <Route path="assigntask" element={<AssignTask/>}/>
                                     <Route path="taskstatus" element={<TaskStatus/>}/>
-                                    <Route path="resetadminpass" element={<ResetAdminPass/>}/>
                                  </Route>
 
                                  <Route path="empdashboard" element={<EmployeeDashboard/>}>
