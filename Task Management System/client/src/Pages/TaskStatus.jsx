@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { Spin } from "antd";
+import wrongimg from "../Images/rightimg.jpeg";
+import rightimg from "../Images/wrongimg.jpeg"
 const TaskStatus=()=>{
     const [Data,setData]=useState([]);
     const [isVisible,setisVisible]=useState(true);
@@ -33,6 +35,7 @@ const TaskStatus=()=>{
         return(
             <>
             <tr>
+                <td>{key.report=="Submitted"?(<img src={wrongimg} height="50" width="60"/>):(<img src={rightimg} height="45" width="50"/>)}</td>
                 <td>{sno}</td>
                 <td>{key.empid.name}</td>
                 <td>{key.empid.email}</td>
@@ -78,6 +81,7 @@ const TaskStatus=()=>{
         <Table striped bordered hover variant="light"  style={{width:"100%"}}>
         <thead>
         <tr>
+          <th>Status</th>
           <th>Sno</th>
           <th>Name</th>
           <th>Email</th>
