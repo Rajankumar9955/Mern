@@ -44,7 +44,7 @@ const TaskNotCompleted=()=>{
     let sno=0;
     const ans=Data.map((key)=>{
         sno++;
-        if(key.taskstatus=="Fully Completed"){
+        if(key.taskstatus=="Not Completed"){
         return(
             <>         
             <tr>

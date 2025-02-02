@@ -15,6 +15,7 @@ import ResetEmployeePass from "./Pages/ResetEmployeePass"
 import AdminProfile from "./Pages/AdminProfile"
 import TaskFullyCompleted from "./Pages/TaskFullyCompleted"
 import TaskPartiallyCompleted from "./Pages/TaskPartiallyCompleted"
+import TaskNotCompleted from "./Pages/TaskNotCompleted"
 
 
 
@@ -37,6 +38,7 @@ const App=()=>{
                                     <Route path="taskstatus" element={<TaskStatus/>}/>
                                     <Route path="taskfullycompleted" element={<TaskFullyCompleted/>}/>
                                     <Route path="taskpartiallycompleted" element={<TaskPartiallyCompleted/>}/>
+                                    <Route path="tasknotcompleted" element={<TaskNotCompleted/>}/>
                                  </Route>
 
                                  <Route path="empdashboard" element={<EmployeeDashboard/>}>
