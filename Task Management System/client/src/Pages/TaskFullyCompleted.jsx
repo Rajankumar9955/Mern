@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import { message, Spin } from "antd";
 import wrongimg from "../Images/rightimg.jpeg";
 import rightimg from "../Images/wrongimg.jpeg"
-const FullyCompleted=()=>{
+const TaskFullyCompleted=()=>{
     const [Data,setData]=useState([]);
     const [isVisible,setisVisible]=useState(true);
     const loadData=async()=>{
@@ -128,4 +128,4 @@ const FullyCompleted=()=>{
                 </>
             )
         }
-export default FullyCompleted
+export default TaskFullyCompleted

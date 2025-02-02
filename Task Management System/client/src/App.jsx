@@ -13,7 +13,8 @@ import EmpProfile from "./Pages/EmpProfile"
 import AdminDashboard from "./Pages/AdminDashboard"
 import ResetEmployeePass from "./Pages/ResetEmployeePass"
 import AdminProfile from "./Pages/AdminProfile"
-import FullyCompleted from "./Pages/FullyCompleted"
+import TaskFullyCompleted from "./Pages/TaskFullyCompleted"
+import TaskPartiallyCompleted from "./Pages/TaskPartiallyCompleted"
 
 
 
@@ -34,7 +35,8 @@ const App=()=>{
                                     <Route path="userscreate" element={<UserCreate/>}/>
                                     <Route path="assigntask" element={<AssignTask/>}/>
                                     <Route path="taskstatus" element={<TaskStatus/>}/>
-                                    <Route path="fullycompleted" element={<FullyCompleted/>}/>
+                                    <Route path="taskfullycompleted" element={<TaskFullyCompleted/>}/>
+                                    <Route path="taskpartiallycompleted" element={<TaskPartiallyCompleted/>}/>
                                  </Route>
 
                                  <Route path="empdashboard" element={<EmployeeDashboard/>}>

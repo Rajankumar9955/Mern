@@ -54,9 +54,9 @@ const AdminDashboard=()=>{
                               </div>
                               <div style={{border:"2px solid black",width:"180px",marginTop:"15px",fontWeight:"bold"}}>
                                      <NavDropdown title="Filter" id="basic-nav-dropdown">
-                                     <NavDropdown.Item as={Link} to="fullycompleted">Fully Task Completed</NavDropdown.Item>
-                                     <NavDropdown.Item  as={Link} to="partiallycompleted"> Partially Completed</NavDropdown.Item>
-                                     <NavDropdown.Item  as={Link} to="notcompleted">Not Completed</NavDropdown.Item>
+                                     <NavDropdown.Item as={Link} to="taskfullycompleted">Fully Task Completed</NavDropdown.Item>
+                                     <NavDropdown.Item  as={Link} to="taskpartiallycompleted"> Partially Completed</NavDropdown.Item>
+                                     <NavDropdown.Item  as={Link} to="tasknotcompleted">Not Completed</NavDropdown.Item>
                                      </NavDropdown>
                               </div>
                               <Button variant="warning"  style={{marginTop:"20px"}} onClick={logoutadmin}>Log-Out</Button>
