@@ -41,16 +41,16 @@ const TaskFullyCompleted=()=>{
         }
      }
 
-    let sno=0;
+    // let sno=0;
     const ans=Data.map((key)=>{
-        sno++;
+        // sno++;
         if(key.taskstatus=="Fully Completed"){
         return(
             <>         
             <tr>
              
                 <td>{key.report=="Submitted"?(<img src={wrongimg} height="50" width="60"/>):(<img src={rightimg} height="45" width="50"/>)}</td>
-                <td>{sno}</td>
+                {/* <td>{sno}</td> */}
                 <td>{key.empid.name}</td>
                 <td>{key.empid.email}</td>
                 <td>{key.empid.designation}</td>
@@ -107,7 +107,7 @@ const TaskFullyCompleted=()=>{
         <thead>
         <tr>
           <th>Status</th>
-          <th>Sno</th>
+          {/* <th>Sno</th> */}
           <th>Name</th>
           <th>Email</th>
           <th>Designation</th>
