@@ -7,6 +7,7 @@ import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { message } from 'antd';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 const AdminDashboard=()=>{
     const [isVisible,setisVisible]=useState(true)
     const navigate=useNavigate()
@@ -50,6 +51,13 @@ const AdminDashboard=()=>{
                               </div>
                               <div id='usercreate1'>
                                <Link to="adminprofile" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Profile</Link>
+                              </div>
+                              <div style={{border:"2px solid black",width:"180px",marginTop:"15px"}}>
+                                     <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                                     <NavDropdown.Item as={Link} to="fullycompleted">Fully Task Completed</NavDropdown.Item>
+                                     <NavDropdown.Item href="#"> Another action</NavDropdown.Item>
+                                     <NavDropdown.Item href="#"> Another action</NavDropdown.Item>
+                                     </NavDropdown>
                               </div>
                               <Button variant="warning"  style={{marginTop:"20px"}} onClick={logoutadmin}>Log-Out</Button>
                         </div>
