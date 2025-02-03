@@ -52,7 +52,7 @@ const AdminDashboard=()=>{
                               <div id='usercreate1'>
                                <Link to="adminprofile" style={{marginLeft:"5px",textDecoration:"none",color:"black"}} >Profile</Link>
                               </div>
-                              <div style={{border:"2px solid black",width:"180px",marginTop:"15px",fontWeight:"bold"}}>
+                              <div style={{border:"2px solid black",width:"180px",marginTop:"15px",fontWeight:"bold",borderRadius:"15px"}}>
                                      <NavDropdown title="Filter" id="basic-nav-dropdown">
                                      <NavDropdown.Item as={Link} to="taskfullycompleted">Fully Task Completed</NavDropdown.Item>
                                      <NavDropdown.Item  as={Link} to="taskpartiallycompleted"> Partially Completed</NavDropdown.Item>

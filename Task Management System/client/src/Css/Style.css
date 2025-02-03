@@ -131,7 +131,7 @@
     display: flex;
 }
 #usersection4{
-    margin-top: 105px;
+    margin-top: 15px;
     margin-left: 55px;
     text-align: center;
 }
@@ -231,4 +231,15 @@
  border-radius: 15px;
 
  /* background-image: url("../Images/coding1.jpeg"); */
+}
+#phto1{
+    border: 2px solid black;
+    margin-bottom: 15px;
+    width: 320px;
+    display: flex;
+    justify-content: space-around;
+
+}
+#formphoto{
+    width: 100px;
 }
