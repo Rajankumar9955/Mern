@@ -14,6 +14,7 @@ const EmpProfile=()=>{
         const [username,setUserName]=useState("");
         const [useremail,setUserEmail]=useState("");
         const [designation,setDesignation]=useState("");
+        const [profilePhoto,setProfilePhoto]=useState("");
         
         const [myfile,setMyfile]=useState("");
     
@@ -28,6 +29,7 @@ const EmpProfile=()=>{
                 setUserName(localStorage.getItem("username"));
                 setUserEmail(localStorage.getItem("useremail"));
                 setDesignation(localStorage.getItem("designation"));
+                setProfilePhoto(localStorage.getItem("profilepic"));
             }
         },[])
 
@@ -70,6 +72,9 @@ const EmpProfile=()=>{
                  <div id='usersection3' >
                    
                      <div id='usersection4' align="center" >
+                        <div style={{height:"60px", }}>
+                            <img src={profilePhoto} alt="" width="60" height="40"/>
+                        </div>
                      <div id="phto1">
                      <FloatingLabel controlId="floatingPassword" label="Upload File" className="mb-1" id="formphoto">
                 <Form.Control type="file" placeholder="name@example.com" name='file' onChange={onChangeHandler}/>

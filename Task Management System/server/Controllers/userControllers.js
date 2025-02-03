@@ -117,7 +117,12 @@ const ResetEmployeePassword=async(req,res)=>{
 const UploadPhoto=async(req,res)=>{
     const{userid}=req.body;
     const imgname=req.file.filename;
-    
+    try {
+         const update= await UserModels.findByIdAndUpdate(userid,{imgname:imgname})
+         res.status(200).json({msg:"Profile Updated"})
+    } catch (error) {
+        console.log(error)
+    }
 }
 module.exports={
     Usercreate,
