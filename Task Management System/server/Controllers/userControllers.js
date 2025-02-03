@@ -114,6 +114,10 @@ const ResetEmployeePassword=async(req,res)=>{
      }
      
 }
+const UploadPhoto=async(req,res)=>{
+    console.log(req.body);
+    res.send("pPKKPK");
+}
 module.exports={
     Usercreate,
     UserLogin,
@@ -123,4 +127,5 @@ module.exports={
     TaskShow,
     TaskSubmitByEmployee,
     ResetEmployeePassword,
+    UploadPhoto
 }

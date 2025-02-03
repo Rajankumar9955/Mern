@@ -5,6 +5,7 @@ const express=require("express");
 const app=express();
 const cors=require("cors");
 const mongoose=require("mongoose");
+const path=require("path");
 require("dotenv").config();
 const bodyparser=require("body-parser");
 
@@ -20,6 +21,8 @@ mongoose.connect(DataBase).then((res)=>{
 })
 
 app.use(cors());
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())

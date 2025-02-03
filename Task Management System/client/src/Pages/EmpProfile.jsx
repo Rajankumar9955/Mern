@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form';
 const EmpProfile=()=>{
     const [isVisible,setisVisible]=useState(true)
     const navigate=useNavigate();
+        const [userid,setUserId]=useState("")
         const [username,setUserName]=useState("");
         const [useremail,setUserEmail]=useState("");
         const [designation,setDesignation]=useState("");
@@ -23,6 +24,7 @@ const EmpProfile=()=>{
             }
             else
             {
+                setUserId(localStorage.getItem("userid"))
                 setUserName(localStorage.getItem("username"));
                 setUserEmail(localStorage.getItem("useremail"));
                 setDesignation(localStorage.getItem("designation"));
@@ -52,7 +54,7 @@ const EmpProfile=()=>{
         const handleSubmit = async()=>{
             const formData=new FormData();
             formData.append('photo', myfile);
-            const res=await axios.post('http://localhost:8000/multerexample/uploadfile', formData)
+            const res=await axios.post('http://localhost:8080/uploadphoto/empprofile', formData)
             alert("SuccessFully Upload On Server");
         };
     return(
