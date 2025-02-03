@@ -115,8 +115,9 @@ const ResetEmployeePassword=async(req,res)=>{
      
 }
 const UploadPhoto=async(req,res)=>{
-    console.log(req.body);
-    res.send("pPKKPK");
+    const{userid}=req.body;
+    const imgname=req.file.filename;
+    
 }
 module.exports={
     Usercreate,

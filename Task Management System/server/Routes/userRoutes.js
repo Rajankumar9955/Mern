@@ -26,6 +26,6 @@ const storage=multer.diskStorage({
 });
 const upload=multer({storage:storage});
 
-route.post("/uploadphoto", upload.single("photo"), userControllers.UploadPhoto);
+route.post("/userphotoupload", upload.single("photo"), userControllers.UploadPhoto);
 
 module.exports=route;

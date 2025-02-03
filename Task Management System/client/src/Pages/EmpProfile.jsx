@@ -4,7 +4,7 @@ import { useState,useEffect } from "react";
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
 import { message ,Spin} from "antd";
-
+import axios from "axios";
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 const EmpProfile=()=>{
@@ -54,7 +54,8 @@ const EmpProfile=()=>{
         const handleSubmit = async()=>{
             const formData=new FormData();
             formData.append('photo', myfile);
-            const res=await axios.post('http://localhost:8080/uploadphoto/empprofile', formData)
+            formData.append('userid', userid);
+            const res=await axios.post('http://localhost:8080/users/userphotoupload',formData)
             alert("SuccessFully Upload On Server");
         };
     return(
