@@ -116,8 +116,8 @@ const UploadPhoto=async(req,res)=>{
     const imgname=req.file.filename;
     try {
          const update= await UserModels.findByIdAndUpdate(userid,{imgname:imgname})
-         console.log(update);
-         res.status(200).json({msg:"Profile Updated"})
+        //  console.log(update);
+         res.status(200).json(update)
     } catch (error) {
         console.log(error)
     }

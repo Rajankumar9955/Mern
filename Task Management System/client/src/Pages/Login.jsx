@@ -50,7 +50,7 @@ const Login=()=>{
                       localStorage.setItem("username", response.data.name);
                       localStorage.setItem("useremail", response.data.email);
                       localStorage.setItem("designation", response.data.designation);
-                      localStorage.setItem("profilepic", response.data.imgname);
+                     
 
                       localStorage.setItem("userid", response.data._id);
 

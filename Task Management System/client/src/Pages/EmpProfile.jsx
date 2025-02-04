@@ -14,7 +14,8 @@ const EmpProfile=()=>{
         const [username,setUserName]=useState("");
         const [useremail,setUserEmail]=useState("");
         const [designation,setDesignation]=useState("");
-        const [profilePhoto,setProfilePhoto]=useState("");
+        
+        const [userProfile,setUserProfile]=useState("");
         
         const [myfile,setMyfile]=useState("");
     
@@ -29,7 +30,7 @@ const EmpProfile=()=>{
                 setUserName(localStorage.getItem("username"));
                 setUserEmail(localStorage.getItem("useremail"));
                 setDesignation(localStorage.getItem("designation"));
-                setProfilePhoto(localStorage.getItem("profilepic"));
+                setUserProfile(localStorage.getItem("userprofile"))
             }
         },[])
 
@@ -53,13 +54,21 @@ const EmpProfile=()=>{
             console.log(e.target.files[0]);
             setMyfile(e.target.files[0]);
         }
+
+
         const handleSubmit = async()=>{
-            const formData=new FormData();
-            formData.append('photo', myfile);
-            formData.append('userid', userid);
-            const res=await axios.post('http://localhost:8080/users/userphotoupload',formData)
-            alert("SuccessFully Upload On Server");
+            try {
+                const formData=new FormData();
+                formData.append('photo', myfile);
+                formData.append('userid', userid);
+                const response=await axios.post('http://localhost:8080/users/userphotoupload',formData)
+                localStorage.setItem("userprofile",response.data.imgname);
+                message.success("Profile Updated");
+            } catch (error) {
+                console.log(error);
+            }  
         };
+
     return(
         <>
         {isVisible?(
@@ -72,8 +81,8 @@ const EmpProfile=()=>{
                  <div id='usersection3' >
                    
                      <div id='usersection4' align="center" >
-                        <div style={{height:"60px", }}>
-                            <img src={profilePhoto} alt="" width="60" height="40"/>
+                        <div style={{height:"80px",width:"80px", borderRadius:"50%", border:"2px solid white", overflow:"hidden",marginLeft:"110px"  }}>
+                            <img src={`http://localhost:8080/uploads/${userProfile}`} alt="" width="80" height="80" id="divimg"/>
                         </div>
                      <div id="phto1">
                      <FloatingLabel controlId="floatingPassword" label="Upload File" className="mb-1" id="formphoto">
