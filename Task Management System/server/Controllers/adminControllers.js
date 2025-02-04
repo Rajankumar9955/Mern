@@ -1,6 +1,7 @@
 
 const AdminModels=require("../Models/adminModels")
 const TaskModels=require("../Models/taskModels")
+const UserModels=require("../Models/userModels");
 const AdminLogin=async(req,res)=>{
     const {email,password,usertype}=req.body;
     // console.log(req.body);
@@ -21,6 +22,16 @@ const AdminLogin=async(req,res)=>{
     usertype:usertype
 }
 
+const TaskStatus=async(req,res)=>{
+    try {
+        const data=await TaskModels.find().populate('empid')
+        // console.log(data);
+        res.send(data);
+    } catch (error) {
+        console.log(error);
+    }
+   
+}
 
 const ReAssignTask=async(req,res)=>{
     const {taskid}=req.body;
@@ -34,5 +45,6 @@ const ReAssignTask=async(req,res)=>{
 }
 module.exports={
     AdminLogin,
-    ReAssignTask
+    TaskStatus,
+    ReAssignTask,
 }

@@ -68,10 +68,7 @@ const AssignTask=async(req,res)=>{
         console.log(error)
     }
 }
-const TaskStatus=async(req,res)=>{
-    const data=await TaskModels.find().populate('empid')
-    res.send(data);
-}
+
 const TaskShow=async(req,res)=>{
     const {empid}=req.body;
     try {
@@ -119,6 +116,7 @@ const UploadPhoto=async(req,res)=>{
     const imgname=req.file.filename;
     try {
          const update= await UserModels.findByIdAndUpdate(userid,{imgname:imgname})
+         console.log(update);
          res.status(200).json({msg:"Profile Updated"})
     } catch (error) {
         console.log(error)
@@ -129,7 +127,6 @@ module.exports={
     UserLogin,
     UserDataDisplay,
     AssignTask,
-    TaskStatus,
     TaskShow,
     TaskSubmitByEmployee,
     ResetEmployeePassword,
