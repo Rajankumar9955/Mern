@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import { message } from 'antd';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 const AdminDashboard=()=>{
-    const [isVisible,setisVisible]=useState(true)
+    // const [isVisible,setisVisible]=useState(true)
     const navigate=useNavigate()
     const [user,setUser]=useState("");
 
