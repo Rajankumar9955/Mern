@@ -61,14 +61,16 @@ const EmpProfile=()=>{
 
 
         const handleSubmit = async()=>{
-            try {
+           
                 const formData=new FormData();
                 formData.append('photo', myfile);
                 formData.append('userid', userid);
                 const response=await axios.post('http://localhost:8080/users/userphotoupload',formData)
-                setUserProfile(response.data);
-                message.success("Profile Updated");
                 
+                setUserProfile(response.data);
+                
+                message.success("Profile Updated");
+                try {
                     // document.getElementById('#fromphoto').style.display = 'none';
                     // document.getElementById('#formphotobtn').style.display = 'none';
 

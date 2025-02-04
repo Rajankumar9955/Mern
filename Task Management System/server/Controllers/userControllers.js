@@ -113,8 +113,8 @@ const ResetEmployeePassword=async(req,res)=>{
 }
 const UploadPhoto=async(req,res)=>{
     const{userid}=req.body;
+    const imgname=req.file.filename;
     try {
-        const imgname=req.file.filename;
          const update= await UserModels.findByIdAndUpdate(userid,{imgname:imgname})
         //  console.log(update);
          res.status(200).json(update)
