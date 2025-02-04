@@ -1,4 +1,3 @@
-
 // import { message } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -7,12 +6,12 @@ import Button from 'react-bootstrap/Button';
 import { message, Spin } from "antd";
 import wrongimg from "../Images/rightimg.jpeg";
 import rightimg from "../Images/wrongimg.jpeg"
-const TaskNotCompleted=()=>{
+const TaskStatus=()=>{
     const [Data,setData]=useState([]);
     const [isVisible,setisVisible]=useState(true);
     const loadData=async()=>{
         try {
-            let api="http://localhost:8080/users/taskstatus";
+            let api="http://localhost:8080/admin/taskstatus";
             const response=await axios.get(api);
             setData(response.data);
             console.log(Data);
@@ -41,38 +40,40 @@ const TaskNotCompleted=()=>{
         }
      }
 
-    // let sno=0;
+    let sno=0;
     const ans=Data.map((key)=>{
+
         // sno++;
-        if(key.taskstatus=="Not Completed"){
+        if(key.taskstatus=='Not Submitted'){
         return(
-            <>         
+            <>
             <tr>
-             
                 <td>{key.report=="Submitted"?(<img src={wrongimg} height="50" width="60"/>):(<img src={rightimg} height="45" width="50"/>)}</td>
                 {/* <td>{sno}</td> */}
-                <td>{key.empid.name}</td>
+                <td>{key.empid.name}</td> 
                 <td>{key.empid.email}</td>
                 <td>{key.empid.designation}</td>
 {/* --------------------------- This is Task Details inside the table------------- */}
                
                <details>
                <summary>Details</summary>
-
         <Table striped bordered hover size="sm">
            <thead>
-                    <tr>
-                        <th>Tasktitle</th>
-                        <th>Completiondays</th>
-                        <th>Description</th>
-                    </tr>
+
+                <tr>
+                    <th>Task Title</th>
+                    <th>Completion Days</th>
+                    <th>Task Description</th>
+                </tr>
+                  
          </thead>
          <tbody>
-                    <tr>
+                   
+                <tr>
                     <td>{key.tasktitle}</td>
                     <td>{key.completiondays}</td>
                     <td>{key.taskdescription}</td>
-                    </tr>
+                </tr>
         </tbody>
                 </Table>
                </details>
@@ -89,12 +90,10 @@ const TaskNotCompleted=()=>{
                 <Button variant="primary" style={{width:"100px"}} size="sm" onClick={()=>{ReAssign(key._id)}}>Re-Assign</Button>
              </td>
             </tr>
-            
             </>
         )
     }
     })
-
     return(
         <>
       {isVisible?(          
@@ -128,4 +127,4 @@ const TaskNotCompleted=()=>{
                 </>
             )
         }
-export default TaskNotCompleted
+export default TaskStatus
