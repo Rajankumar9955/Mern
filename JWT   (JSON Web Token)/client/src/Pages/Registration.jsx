@@ -6,8 +6,9 @@ import Button from "react-bootstrap/Button"
 import { useState } from 'react';
 import {message} from 'antd'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 const Registration=()=>{
-
+const navigate=useNavigate();
      const [input,setInput]=useState({});
 
      const handleInput=(e)=>{
@@ -18,10 +19,11 @@ const Registration=()=>{
      }
 
     const handleSubmit=async()=>{
-            let api="http://localhost:8000/user/registration";
             try {
+                let api="http://localhost:8000/user/registration";
                    const response= await axios.post(api,input);
-                   message.success(response.data.msg);
+                   message.success("Data Inserted");
+                   navigate("/login")
             } catch (error) {
                 console.log(error);
             }
