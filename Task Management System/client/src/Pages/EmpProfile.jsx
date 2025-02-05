@@ -7,16 +7,15 @@ import { message ,Spin} from "antd";
 import axios from "axios";
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
+
 const EmpProfile=()=>{
-    // const [isVisible,setisVisible]=useState(true)
+    
+    const [isVisible,setisVisible]=useState(true)
     const navigate=useNavigate();
         const [userid,setUserId]=useState("")
         const [username,setUserName]=useState("");
         const [useremail,setUserEmail]=useState("");
         const [designation,setDesignation]=useState("");
-        
-        const [userProfile,setUserProfile]=useState({});
-
         
         
         const [myfile,setMyfile]=useState("");   //form 
@@ -47,12 +46,12 @@ const EmpProfile=()=>{
 
 
           
-        // useEffect(()=>{
-        //     setTimeout(() => {
-        //         setisVisible(false)
-        //     }, 1500);
-        //     setisVisible(true)
-        // },[])
+        useEffect(()=>{
+            setTimeout(() => {
+                setisVisible(false)
+            }, 1500);
+            setisVisible(true)
+        },[])
 
         const onChangeHandler=(e)=>{
             console.log(e.target.files[0]);
@@ -66,36 +65,35 @@ const EmpProfile=()=>{
                 formData.append('photo', myfile);
                 formData.append('userid', userid);
                 const response=await axios.post('http://localhost:8080/users/userphotoupload',formData)
-                
-                setUserProfile(response.data);
-                
-                message.success("Profile Updated");
                 try {
-                    // document.getElementById('#fromphoto').style.display = 'none';
-                    // document.getElementById('#formphotobtn').style.display = 'none';
+                localStorage.setItem('imgname', response.data.imgname)
+                message.success("Profile Updated!")
+                navigate('/empdashboard/empprofile');
+                
+                        // document.getElementById('#fromphoto').style.display = 'none';
+                        // document.getElementById('#formphotobtn').style.display = 'none';
+                   
 
               } catch (error) {
                 console.log(error);
             }  
         };
-        // useEffect(()=>{
-        //     setUserProfile)
-        //   },[])
+        
 
     return(
         <>
-        {/* {isVisible?(
+        {isVisible?(
             <div align="center" style={{marginTop:"100px"}}>
             <Spin tip="Loading" size="large"></Spin>
         </div>
-        ):( */}
+        ):(
             <div id='usersection1'>
             <div id='usersection2' align="center" style={{marginTop:"15px"}}>
                  <div id='usersection3' >
                    
                      <div id='usersection4' align="center" >
                         <div style={{height:"80px",width:"80px", borderRadius:"50%", border:"2px solid white", overflow:"hidden",marginLeft:"110px"  }}>
-                            <img src={`http://localhost:8080/uploads/${userProfile.imgname}`} alt="img" width="80" height="80" id="divimg"/>
+                            <img src={`http://localhost:8080/uploads/${localStorage.getItem('imgname')}`} alt="img" width="80" height="80" id="divimg"/>
                         </div>
                      <div id="phto1">
                      <FloatingLabel controlId="floatingPassword" label="Upload File" className="mb-1" id="formphoto">
@@ -118,7 +116,7 @@ const EmpProfile=()=>{
                  </div>
             </div>
      </div>
-        {/* )} */}
+     )} 
         
         </>
     )
