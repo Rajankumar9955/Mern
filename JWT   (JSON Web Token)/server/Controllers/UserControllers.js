@@ -22,8 +22,6 @@ const UserLogin=async(req,res)=>{
     const {email, password}=req.body;
 
     try {
-        
-    
     const User=await UsersModel.findOne({email:email});
     if(!User){
         res.status(400).send({msg:"Invalid Email"});
@@ -34,7 +32,7 @@ const UserLogin=async(req,res)=>{
     }
     const token= jwt.sign({id:User._id}, process.env.TOKEN_KEY,{
         expiresIn: 3 * 24 * 60 * 60,
-    })
+       }  )
     res.status(200).send({token:token});
 
   } catch (error) {
@@ -42,7 +40,14 @@ const UserLogin=async(req,res)=>{
 }
 
 }
+
+const UserAuthentication=async(req,res)=>{
+   const token = req.header("auth-token");
+    console.log(token)
+    res.send("klklk")
+}
 module.exports={
     UserRegister,
     UserLogin,
+    UserAuthentication
 }

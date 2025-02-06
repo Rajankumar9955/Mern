@@ -6,6 +6,7 @@ import Layout from "./Layout";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Registration from "./Pages/Registration";
+import Dashboard from "./Pages/Dashboard";
 const App=()=>{
   return(
     <>
@@ -15,6 +16,7 @@ const App=()=>{
                                      <Route path="home" element={<Home/>}/>
                                      <Route path="login" element={<Login/>}/>
                                      <Route path="registration" element={<Registration/>}/>
+                                     <Route path="dashboard" element={<Dashboard/>}/>
                                 </Route>
                          </Routes>
           </BrowserRouter>
