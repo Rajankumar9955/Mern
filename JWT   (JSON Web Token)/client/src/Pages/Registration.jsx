@@ -4,8 +4,8 @@ import Form from 'react-bootstrap/Form';
 
 import Button from "react-bootstrap/Button"
 import { useState } from 'react';
-import {message} from 'antd'
 import axios from 'axios'
+import {message} from "antd"
 import { useNavigate } from 'react-router-dom';
 const Registration=()=>{
 const navigate=useNavigate();
@@ -22,7 +22,7 @@ const navigate=useNavigate();
             try {
                 let api="http://localhost:8000/user/registration";
                    const response= await axios.post(api,input);
-                   message.success("Data Inserted");
+                   message.success(response.data.msg);
                    navigate("/login")
             } catch (error) {
                 console.log(error);

@@ -11,7 +11,7 @@ const DataSave=async(req,res)=>{
             email:email,
             password:password
         })
-        res.send(Data);
+        res.send(200).send({msg:"Now! You are Registered!"});
     } catch (error) {
         console.log(error)
     }
