@@ -20,8 +20,8 @@ const TopMenu=()=>{
           <Nav className="me-auto">
             <Nav.Link as={Link} to="home">Home</Nav.Link>
           </Nav>
-          Welcome:{localStorage.getItem("username")}  
-          Email:{localStorage.getItem("useremail")}   
+          Welcome:{localStorage.getItem("username")} |
+           Email:{localStorage.getItem("useremail")} | 
           <Button variant='warning' onClick={logout}>Logout</Button>
         </Container>
       </Navbar>
@@ -40,6 +40,12 @@ const TopMenu=()=>{
       </Navbar>
         </>
        )}
+
+      
+
+         
+      
+
 
         </>
     )

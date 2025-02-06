@@ -6,14 +6,14 @@ const Home=()=>{
             const navigate=useNavigate();
             const UserAuth=async()=>{
                  const token=localStorage.getItem("token");
-
+               if(token){
                   let api="http://localhost:8000/user/UserAuth";
                   const tokenRes=await axios.post(api, null, {headers: { "auth-token": token } });
-                  localStorage.setItem("usename", tokenRes.data.name);
+                  localStorage.setItem("username", tokenRes.data.name);
                   localStorage.setItem("useremail", tokenRes.data.email);
                   navigate("/dashboard")
                 }
-
+              }
           useEffect(()=>{
             UserAuth()
           },[])

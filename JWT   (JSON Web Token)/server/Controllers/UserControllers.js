@@ -44,7 +44,10 @@ const UserLogin=async(req,res)=>{
 const UserAuthentication=async(req,res)=>{
    const token = req.header("auth-token");
     console.log(token)
-    res.send("klklk")
+    const decoded=jwt.verify(token,process.env.TOKEN_KEY);
+    const user=await UsersModel.findById(decoded.id);
+    // console.log(user)
+    res.status(200).send(user);
 }
 module.exports={
     UserRegister,
