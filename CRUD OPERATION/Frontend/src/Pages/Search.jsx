@@ -46,7 +46,7 @@ const Search=()=>{
        <FloatingLabel controlId="floatingInput" label=" Enter Car Name" className="mb-1">
         <Form.Control type="search" placeholder="name@example.com" value={carName} onChange={(e)=>{setcarName(e.target.value)}} />
       </FloatingLabel>
-      <Button variant="success" onClick={handleSubmit}>Save</Button>
+      <Button variant="success" onClick={handleSubmit}>Search</Button>
       </div>
       <hr size="2" />
       <div>
